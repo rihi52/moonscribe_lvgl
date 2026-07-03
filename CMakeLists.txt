@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.12.4)
-project(lvgl C CXX)
+
+set(CMAKE_TOOLCHAIN_FILE "C:/vcpkg/scripts/buildsystems/vcpkg.cmake"
+    CACHE STRING "Vcpkg toolchain file")
+
+project(moonscribe_lvgl C CXX)
 
 # Set the correct FreeRTOS port for your system (e.g., Posix for WSL)
 set(FREERTOS_PORT GCC_POSIX CACHE STRING "Port for FreeRTOS on Posix environment")
@@ -66,11 +70,14 @@ add_compile_definitions($<$<BOOL:${LV_USE_LIBJPEG_TURBO}>:LV_USE_LIBJPEG_TURBO=1
 add_compile_definitions($<$<BOOL:${LV_USE_FFMPEG}>:LV_USE_FFMPEG=1>)
 
 # Add LVGL subdirectory
+cmake_policy(SET CMP0079 NEW)
 add_subdirectory(lvgl)
-target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
+target_link_libraries(lvgl PUBLIC SDL2::SDL2)
+# target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
 
 set(MAIN_SOURCES src/mouse_cursor_icon.c src/hal/hal.c)
-set(MAIN_LIBS lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES})
+# set(MAIN_LIBS lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES})
+set(MAIN_LIBS lvgl lvgl::examples lvgl::demos lvgl::thorvg SDL2::SDL2main SDL2::SDL2)
 
 # Create the main executable, depending on the FreeRTOS option
 if(USE_FREERTOS)
@@ -89,25 +96,39 @@ endif()
 add_custom_target(run COMMAND ${EXECUTABLE_OUTPUT_PATH}/main DEPENDS main)
 
 # Conditionally include and link SDL2_image if LV_USE_DRAW_SDL is enabled
+# if(LV_USE_DRAW_SDL)
+#     set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
+#     find_package(SDL2_image REQUIRED)
+#     target_include_directories(lvgl PUBLIC ${SDL2_IMAGE_INCLUDE_DIRS})
+#     list(APPEND MAIN_LIBS ${SDL2_IMAGE_LIBRARIES})
+# endif()
 if(LV_USE_DRAW_SDL)
     set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
     find_package(SDL2_image REQUIRED)
-    target_include_directories(lvgl PUBLIC ${SDL2_IMAGE_INCLUDE_DIRS})
-    list(APPEND MAIN_LIBS ${SDL2_IMAGE_LIBRARIES})
+    list(APPEND MAIN_LIBS SDL2::Image)
 endif()
 
 # Conditionally include and link libpng if LV_USE_LIBPNG is enabled
+# if(LV_USE_LIBPNG)
+#     find_package(PNG REQUIRED)
+#     target_include_directories(lvgl PUBLIC ${PNG_INCLUDE_DIRS})
+#     list(APPEND MAIN_LIBS ${PNG_LIBRARIES})
+# endif()
+
+# # Conditionally include and link libjpeg-turbo if LV_USE_LIBJPEG_TURBO is enabled
+# if(LV_USE_LIBJPEG_TURBO)
+#     find_package(JPEG REQUIRED)
+#     target_include_directories(lvgl PUBLIC ${JPEG_INCLUDE_DIRS})
+#     list(APPEND MAIN_LIBS ${JPEG_LIBRARIES})
+# endif()
 if(LV_USE_LIBPNG)
     find_package(PNG REQUIRED)
-    target_include_directories(lvgl PUBLIC ${PNG_INCLUDE_DIRS})
-    list(APPEND MAIN_LIBS ${PNG_LIBRARIES})
+    list(APPEND MAIN_LIBS PNG::PNG)
 endif()
 
-# Conditionally include and link libjpeg-turbo if LV_USE_LIBJPEG_TURBO is enabled
 if(LV_USE_LIBJPEG_TURBO)
     find_package(JPEG REQUIRED)
-    target_include_directories(lvgl PUBLIC ${JPEG_INCLUDE_DIRS})
-    list(APPEND MAIN_LIBS ${JPEG_LIBRARIES})
+    list(APPEND MAIN_LIBS JPEG::JPEG)
 endif()
 
 # Conditionally include and link FFmpeg libraries if LV_USE_FFMPEG is enabled
@@ -116,10 +137,14 @@ if(LV_USE_FFMPEG)
 endif()
 
 # Conditionally include and link FreeType if LV_USE_FREETYPE is enabled
+# if(LV_USE_FREETYPE)
+#     find_package(Freetype REQUIRED)
+#     target_include_directories(lvgl PUBLIC ${FREETYPE_INCLUDE_DIRS})
+#     list(APPEND MAIN_LIBS ${FREETYPE_LIBRARIES})
+# endif()
 if(LV_USE_FREETYPE)
     find_package(Freetype REQUIRED)
-    target_include_directories(lvgl PUBLIC ${FREETYPE_INCLUDE_DIRS})
-    list(APPEND MAIN_LIBS ${FREETYPE_LIBRARIES})
+    list(APPEND MAIN_LIBS Freetype::Freetype)
 endif()
 
 if(LVGL_PRO_PROJECT_DIR)
@@ -143,7 +168,8 @@ endif()
 
 add_executable(main ${MAIN_SOURCES})
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
-target_link_libraries(main ${MAIN_LIBS})
+target_link_libraries(main PRIVATE ${MAIN_LIBS})
+target_include_directories(main PRIVATE ${PROJECT_SOURCE_DIR})
 
 # On Windows, GUI applications do not show a console by default,
 # which hides log output. This ensures a console is available for logging.

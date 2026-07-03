@@ -1118,7 +1118,7 @@
 
 /** Enable ThorVG (vector graphics library) from the src/libs folder.
  *  Requires LV_USE_VECTOR_GRAPHIC */
-#define LV_USE_THORVG_INTERNAL 1 
+#define LV_USE_THORVG_INTERNAL 1
 
 /** Enable ThorVG by assuming that its installed and linked to the project
  *  Requires LV_USE_VECTOR_GRAPHIC */
