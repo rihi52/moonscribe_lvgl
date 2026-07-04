@@ -20,8 +20,10 @@
   #include <pthread.h>
 #endif
 #include "lvgl/lvgl.h"
-#include "lvgl/examples/lv_examples.h"
-#include "lvgl/demos/lv_demos.h"
+#include "screens/home_screen.h"
+#include "styles.h"
+// #include "lvgl/examples/lv_examples.h"
+// #include "lvgl/demos/lv_demos.h"
 #include <SDL.h>
 
 #include "hal/hal.h"
@@ -61,7 +63,7 @@ int main(int argc, char *argv[])
   bool simulator_mode = false;
   lv_display_t* display = lv_windows_create_display(
       L"LVGL Display Window",
-      1920, 1080,
+      720, 480,
       zoom_level, allow_dpi_override, simulator_mode);
   if (!display) return -1;
   lv_lock();
@@ -71,7 +73,9 @@ int main(int argc, char *argv[])
   if (!keypad_device) return -1;
   lv_indev_t* encoder_device = lv_windows_acquire_encoder_indev(display);
   if (!encoder_device)  return -1;
-  lv_demo_widgets();
+  // lv_demo_widgets();
+  gvStylesInit();
+  gvHome_screen();
   lv_unlock();
   while (1)
   {
@@ -82,47 +86,6 @@ int main(int argc, char *argv[])
   }
   return 0;
 }
-
-// #if LV_USE_OS != LV_OS_FREERTOS
-
-// int main(int argc, char **argv)
-// {
-//   (void)argc; /*Unused*/
-//   (void)argv; /*Unused*/
-
-//   /*Initialize LVGL*/
-//   lv_init();
-
-//   /*Initialize the HAL (display, input devices, tick) for LVGL*/
-//   sdl_hal_init(320, 480);
-
-//   /* Run the default demo */
-//   /* To try a different demo or example, replace this with one of: */
-//   /* - lv_demo_benchmark(); */
-//   /* - lv_demo_stress(); */
-//   /* - lv_example_label_1(); */
-//   /* - etc. */
-//   lv_demo_widgets();
-
-//   while(1) {
-//     /* Periodically call the lv_task handler.
-//      * It could be done in a timer interrupt or an OS task too.*/
-//     uint32_t sleep_time_ms = lv_timer_handler();
-//     if(sleep_time_ms == LV_NO_TIMER_READY){
-// 	sleep_time_ms =  LV_DEF_REFR_PERIOD;
-//     }
-// #ifdef _MSC_VER
-//     Sleep(sleep_time_ms);
-// #else
-//     usleep(sleep_time_ms * 1000);
-// #endif
-//   }
-
-//   return 0;
-// }
-
-
-// #endif
 
 /**********************
  *   STATIC FUNCTIONS
