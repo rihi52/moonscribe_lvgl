@@ -187,7 +187,7 @@
 				"name": "Debug LVGL demo with gdb",
 				"type": "cppdbg",
 				"request": "launch",
-				"program": "${workspaceFolder}/bin/Debug/main",
+				"program": "${workspaceFolder}/bin/main.exe",
 				"args": [],
 				"cwd": "${workspaceFolder}",
 				"preLaunchTask": "Build",
@@ -201,7 +201,7 @@
 				  },
 				  "windows": {
 					"MIMode": "gdb",
-					"miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
+					"miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe"
 				  }
 			},
 			{

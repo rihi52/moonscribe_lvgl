@@ -169,6 +169,11 @@ endif()
 add_executable(main ${MAIN_SOURCES})
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main PRIVATE ${MAIN_LIBS})
+add_custom_command(TARGET main POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        $<TARGET_FILE:SDL2::SDL2>
+        $<TARGET_FILE_DIR:main>
+)
 target_include_directories(main PRIVATE ${PROJECT_SOURCE_DIR})
 
 # On Windows, GUI applications do not show a console by default,

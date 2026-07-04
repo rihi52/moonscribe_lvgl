@@ -106,7 +106,7 @@
  * - LV_OS_MQX
  * - LV_OS_SDL2
  * - LV_OS_CUSTOM */
-#define LV_USE_OS   LV_OS_NONE
+#define LV_USE_OS   LV_OS_WINDOWS
 
 #if LV_USE_OS == LV_OS_CUSTOM
     #define LV_OS_CUSTOM_INCLUDE <stdint.h>
@@ -1478,7 +1478,7 @@
 #define LV_USE_NXP_ELCDIF   0
 
 /** LVGL Windows backend */
-#define LV_USE_WINDOWS    0
+#define LV_USE_WINDOWS    1
 
 /** LVGL UEFI backend */
 #define LV_USE_UEFI 0
