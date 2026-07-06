@@ -3,6 +3,7 @@
 #include "lvgl/lvgl.h"
 #include "home_screen.h"
 #include "../styles.h"
+#include "../components/button.h"
 
 /*********************
  *  Local Variables
