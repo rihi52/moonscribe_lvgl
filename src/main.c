@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
   if (!encoder_device)  return -1;
   // lv_demo_widgets();
   gvStylesInit();
-  gvHome_screen();
+  gvHomeScreenCreate();
   lv_unlock();
   while (1)
   {

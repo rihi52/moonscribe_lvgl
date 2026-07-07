@@ -11,6 +11,6 @@ extern lv_obj_t * pHomeScreen;
 /*********************
  *  Global Prototypes
  *********************/
-void gvHome_screen(void);
+void gvHomeScreenCreate(void);
 
 #endif /* HOME_SCREEN_H */

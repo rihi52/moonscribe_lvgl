@@ -22,6 +22,7 @@ static bool inited = false;
  *  Global Variables
  *********************/
 /* Styles */
+lv_style_t gCommonScreenStyle;
 lv_style_t gHomeScreenStyle;
 lv_style_t gHomeScreenButtonStyle;
 
@@ -36,8 +37,13 @@ void gvStylesInit(void){
         /* Initialize styles */
         lv_style_init(&gHomeScreenStyle);
         lv_style_init(&gHomeScreenButtonStyle);
+        lv_style_init(&gCommonScreenStyle);
 
         /* Define styles */
+        /* Common Screen Style */
+        // Can the flex properties be set here???
+
+        /* Home Screen Specific Styles */
         lv_style_set_bg_color(&gHomeScreenStyle, Background);
 
         lv_style_set_bg_color(&gHomeScreenButtonStyle, Primary);
