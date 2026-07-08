@@ -9,6 +9,7 @@
 /* Colors */
 static lv_color_t Background;
 static lv_color_t Primary;
+// static lv_color_t
 
 /* Radii */
 static uint16_t SmallRadius    = 8;
@@ -22,10 +23,14 @@ static bool inited = false;
  *  Global Variables
  *********************/
 /* Styles */
-lv_style_t gCommonScreenStyle;
+lv_style_t gCommonFlexColumnScreenStyle;
 lv_style_t gHomeScreenStyle;
 lv_style_t gHomeScreenButtonStyle;
+lv_style_t gTabViewStyle;
 
+/*********************
+ *  Global functions
+ *********************/
 
 void gvStylesInit(void){
     /* Colors */
@@ -37,11 +42,15 @@ void gvStylesInit(void){
         /* Initialize styles */
         lv_style_init(&gHomeScreenStyle);
         lv_style_init(&gHomeScreenButtonStyle);
-        lv_style_init(&gCommonScreenStyle);
+        lv_style_init(&gCommonFlexColumnScreenStyle);
 
         /* Define styles */
         /* Common Screen Style */
-        // Can the flex properties be set here???
+        lv_style_set_flex_flow(&gCommonFlexColumnScreenStyle, LV_FLEX_FLOW_COLUMN_WRAP);
+        lv_style_set_layout(&gCommonFlexColumnScreenStyle, LV_LAYOUT_FLEX);
+        lv_style_set_flex_main_place(&gCommonFlexColumnScreenStyle, LV_FLEX_ALIGN_CENTER);
+        lv_style_set_flex_cross_place(&gCommonFlexColumnScreenStyle, LV_FLEX_ALIGN_CENTER);
+        lv_style_set_flex_track_place(&gCommonFlexColumnScreenStyle, LV_FLEX_ALIGN_CENTER);
 
         /* Home Screen Specific Styles */
         lv_style_set_bg_color(&gHomeScreenStyle, Background);

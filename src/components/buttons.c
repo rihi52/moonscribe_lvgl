@@ -11,6 +11,7 @@ lv_obj_t *gpMainButton(lv_obj_t *pParent, const char *pButtonLabel) {
 
     lv_obj_t *pCreatedLabel = lv_label_create(pCreatedButton);
     lv_label_set_text(pCreatedLabel, pButtonLabel);
+    lv_obj_set_style_text_font(pCreatedLabel, &Metamorphous_24, 0);
     lv_obj_center(pCreatedLabel);
 
     return pCreatedButton;

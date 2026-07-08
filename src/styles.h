@@ -5,9 +5,10 @@
 /*********************
  *  Global Variables
  *********************/
-extern lv_style_t gCommonScreenStyle;
+extern lv_style_t gCommonFlexColumnScreenStyle;
 extern lv_style_t gHomeScreenStyle;
 extern lv_style_t gHomeScreenButtonStyle;
+extern lv_style_t gTabViewStyle;
 
 /*********************
  *  Global Prototypes

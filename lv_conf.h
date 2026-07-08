@@ -740,7 +740,7 @@
  *  #define LV_FONT_CUSTOM_DECLARE   LV_FONT_DECLARE(my_font_1) LV_FONT_DECLARE(my_font_2)
  *  @endcode
  */
-#define LV_FONT_CUSTOM_DECLARE  LV_FONT_DECLARE(Metamorphous)   LV_FONT_DECLARE(Metamorphous_24)
+#define LV_FONT_CUSTOM_DECLARE  LV_FONT_DECLARE(Metamorphous)   LV_FONT_DECLARE(Metamorphous_24)    LV_FONT_DECLARE(CinzelDecorativeBold_48)
 
 /** Always set a default font */
 #define LV_FONT_DEFAULT &lv_font_montserrat_14

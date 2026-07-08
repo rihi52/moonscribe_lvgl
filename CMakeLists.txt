@@ -84,7 +84,7 @@ if(USE_FREERTOS)
     list(APPEND MAIN_SOURCES src/freertos_main.c src/freertos/freertos_posix_port.c ${FREERTOS_SOURCES})
     list(APPEND MAIN_LIBS freertos_config freertos_kernel)
 else()
-    list(APPEND MAIN_SOURCES src/main.c src/screens/home_screen.c src/styles.c src/components/buttons.c assets/Metamorphous_24.c)
+    list(APPEND MAIN_SOURCES src/main.c src/screens/home_screen.c src/screens/creatures_screen.c src/styles.c src/components/buttons.c src/global.c assets/CinzelDecorativeBold_48.c assets/Metamorphous_24.c)
 endif()
 
 

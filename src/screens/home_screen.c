@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "lvgl/lvgl.h"
 #include "home_screen.h"
+#include "../global.h"
 #include "../styles.h"
 #include "../components/buttons.h"
 
@@ -21,17 +22,15 @@ lv_obj_t * pHomeScreen;
 void gvHomeScreenCreate(void) {
     pHomeScreen = lv_obj_create(NULL);
     lv_obj_add_style(pHomeScreen, &gHomeScreenStyle, 0);
+    lv_obj_add_style(pHomeScreen, &gCommonFlexColumnScreenStyle, 0);
     lv_obj_set_align(pHomeScreen, LV_ALIGN_CENTER);
-    lv_obj_set_flex_flow(pHomeScreen, LV_FLEX_FLOW_COLUMN_WRAP);
-    lv_obj_set_style_flex_main_place(pHomeScreen, LV_FLEX_ALIGN_CENTER, 0);
-    lv_obj_set_style_flex_cross_place(pHomeScreen, LV_FLEX_ALIGN_CENTER, 0);
-    lv_obj_set_style_flex_track_place(pHomeScreen, LV_FLEX_ALIGN_CENTER, 0);
 
     lv_screen_load(pHomeScreen);
 
     lv_obj_t *pHomeScreenHeadLabel = lv_label_create(pHomeScreen);
     lv_label_set_text(pHomeScreenHeadLabel, "MOONSCRIBE");
-    lv_obj_set_style_text_font(pHomeScreenHeadLabel, &Metamorphous_24, 0);
+    lv_obj_set_style_text_font(pHomeScreenHeadLabel, &CinzelDecorativeBold_48, 0);
+    lv_obj_set_style_text_color(pHomeScreenHeadLabel, lv_color_make(68, 22, 148), 0);
     lv_obj_center(pHomeScreenHeadLabel);
 
     lv_obj_t *pCombatButton = gpMainButton(pHomeScreen, "Combat");
@@ -39,7 +38,12 @@ void gvHomeScreenCreate(void) {
 
     lv_obj_t *pCreaturesButton = gpMainButton(pHomeScreen, "Creatures");
     lv_obj_add_style(pCreaturesButton, &gHomeScreenButtonStyle, 0);
+    lv_obj_add_event_cb(pCreaturesButton, gvActivateCreaturesScreen_eventcb, LV_EVENT_CLICKED, NULL);
 
     lv_obj_t *pPlayersButton = gpMainButton(pHomeScreen, "Players");
     lv_obj_add_style(pPlayersButton, &gHomeScreenButtonStyle, 0);
 }
+
+/*********************
+ *  Static Functions
+ *********************/
