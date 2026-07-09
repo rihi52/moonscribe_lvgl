@@ -22,16 +22,17 @@ lv_obj_t * pHomeScreen;
 void gvHomeScreenCreate(void) {
     pHomeScreen = lv_obj_create(NULL);
     lv_obj_add_style(pHomeScreen, &gHomeScreenStyle, 0);
-    lv_obj_add_style(pHomeScreen, &gCommonFlexColumnScreenStyle, 0);
+    lv_obj_add_style(pHomeScreen, &gBackgroundFlexColumnScreenStyle, 0);
     lv_obj_set_align(pHomeScreen, LV_ALIGN_CENTER);
 
-    lv_screen_load(pHomeScreen);
+    if (lv_screen_active() != pHomeScreen){
+        lv_screen_load(pHomeScreen);
+    }
 
     lv_obj_t *pHomeScreenHeadLabel = lv_label_create(pHomeScreen);
     lv_label_set_text(pHomeScreenHeadLabel, "MOONSCRIBE");
     lv_obj_set_style_text_font(pHomeScreenHeadLabel, &CinzelDecorativeBold_48, 0);
-    lv_obj_set_style_text_color(pHomeScreenHeadLabel, lv_color_make(68, 22, 148), 0);
-    lv_obj_center(pHomeScreenHeadLabel);
+    lv_obj_set_style_text_color(pHomeScreenHeadLabel, Primary, 0);
 
     lv_obj_t *pCombatButton = gpMainButton(pHomeScreen, "Combat");
     lv_obj_add_style(pCombatButton, &gHomeScreenButtonStyle, 0);
