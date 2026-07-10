@@ -8,13 +8,15 @@
 /* Colors */
 extern lv_color_t Background;
 extern lv_color_t Primary;
+extern lv_color_t SelectedButton;
+extern lv_color_t White;
 
 /* Styles */
 extern lv_style_t gBackgroundFlexColumnScreenStyle;
 extern lv_style_t gBackgroundFlexRowScreenStyle;
-extern lv_style_t gHomeScreenStyle;
 extern lv_style_t gHomeScreenButtonStyle;
-extern lv_style_t gTabViewStyle;
+extern lv_style_t gSidebarDefaultButtonStyle;
+extern lv_style_t gSidebarSelectedButtonStyle;
 extern lv_style_t gGeneralStyle;
 
 /*********************

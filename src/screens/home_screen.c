@@ -21,7 +21,7 @@ lv_obj_t * pHomeScreen;
 
 void gvHomeScreenCreate(void) {
     pHomeScreen = lv_obj_create(NULL);
-    lv_obj_add_style(pHomeScreen, &gHomeScreenStyle, 0);
+    lv_obj_add_style(pHomeScreen, &gGeneralStyle, 0);
     lv_obj_add_style(pHomeScreen, &gBackgroundFlexColumnScreenStyle, 0);
     lv_obj_set_align(pHomeScreen, LV_ALIGN_CENTER);
 
@@ -35,14 +35,11 @@ void gvHomeScreenCreate(void) {
     lv_obj_set_style_text_color(pHomeScreenHeadLabel, Primary, 0);
 
     lv_obj_t *pCombatButton = gpMainButton(pHomeScreen, "Combat");
-    lv_obj_add_style(pCombatButton, &gHomeScreenButtonStyle, 0);
 
     lv_obj_t *pCreaturesButton = gpMainButton(pHomeScreen, "Creatures");
-    lv_obj_add_style(pCreaturesButton, &gHomeScreenButtonStyle, 0);
     lv_obj_add_event_cb(pCreaturesButton, gvActivateCreaturesScreen_eventcb, LV_EVENT_CLICKED, NULL);
 
     lv_obj_t *pPlayersButton = gpMainButton(pHomeScreen, "Players");
-    lv_obj_add_style(pPlayersButton, &gHomeScreenButtonStyle, 0);
 }
 
 /*********************

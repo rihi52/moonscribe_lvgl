@@ -9,13 +9,14 @@
 /* Colors */
 lv_color_t Background;
 lv_color_t Primary;
-// static lv_color_t
+lv_color_t SelectedButton;
+lv_color_t White;
 
-/* Radii */
-static uint16_t NoRadius       = 0;
-static uint16_t SmallRadius    = 8;
-static uint16_t MediumRadius   = 16;
-static uint16_t LargeRadius    = 24;
+/* Standard values for styling */
+static uint16_t NoValue        = 0;
+static uint16_t SmallValue     = 8;
+static uint16_t MediumValue    = 16;
+static uint16_t LargeValue     = 24;
 
 /* Booleans */
 static bool inited = false;
@@ -24,11 +25,16 @@ static bool inited = false;
  *  Global Variables
  *********************/
 /* Styles */
+/* Screens */
 lv_style_t gBackgroundFlexColumnScreenStyle;
 lv_style_t gBackgroundFlexRowScreenStyle;
-lv_style_t gHomeScreenStyle;
+
+/* Buttons */
 lv_style_t gHomeScreenButtonStyle;
-lv_style_t gTabViewStyle;
+lv_style_t gSidebarDefaultButtonStyle;
+lv_style_t gSidebarSelectedButtonStyle;
+
+/* Common */
 lv_style_t gGeneralStyle;
 
 /*********************
@@ -37,22 +43,25 @@ lv_style_t gGeneralStyle;
 
 void gvStylesInit(void){
     /* Colors */
-    Background  = lv_color_make(36, 36, 36);
-    Primary     = lv_color_make(68, 22, 148);
+    Background      = lv_color_make(36, 36, 36);
+    Primary         = lv_color_make(68, 22, 148);
+    SelectedButton  = lv_color_make(50, 50, 50);
+    White           = lv_color_white();
 
     /* Styles */
     if (!inited) {
         /* Initialize styles */
-        lv_style_init(&gHomeScreenStyle);
-        lv_style_init(&gHomeScreenButtonStyle);
         lv_style_init(&gBackgroundFlexColumnScreenStyle);
         lv_style_init(&gBackgroundFlexRowScreenStyle);
+        lv_style_init(&gHomeScreenButtonStyle);
+        lv_style_init(&gSidebarDefaultButtonStyle);
+        lv_style_init(&gSidebarSelectedButtonStyle);
         lv_style_init(&gGeneralStyle);
 
         /* Define styles */
         lv_style_set_bg_color(&gGeneralStyle, Background);
-        lv_style_set_radius(&gGeneralStyle, NoRadius);
-        lv_style_set_border_width(&gGeneralStyle, NoRadius);
+        lv_style_set_radius(&gGeneralStyle, NoValue);
+        lv_style_set_border_width(&gGeneralStyle, NoValue);
 
         /* Common Flex Column Style */
         lv_style_set_flex_flow(&gBackgroundFlexColumnScreenStyle, LV_FLEX_FLOW_COLUMN);
@@ -70,12 +79,22 @@ void gvStylesInit(void){
         lv_style_set_flex_track_place(&gBackgroundFlexRowScreenStyle, LV_FLEX_ALIGN_CENTER);
         lv_style_set_pad_column(&gBackgroundFlexRowScreenStyle, 0);
 
-        /* Home Screen Specific Styles */
-        lv_style_set_bg_color(&gHomeScreenStyle, Background);
-
+        /* Button Styles */
         lv_style_set_bg_color(&gHomeScreenButtonStyle, Primary);
-        lv_style_set_radius(&gHomeScreenButtonStyle, MediumRadius);
-        lv_style_set_margin_ver(&gHomeScreenButtonStyle, SmallRadius);
+        lv_style_set_radius(&gHomeScreenButtonStyle, MediumValue);
+        lv_style_set_margin_ver(&gHomeScreenButtonStyle, SmallValue);
+
+        /* Default Sidebar Button */
+        lv_style_set_bg_color(&gSidebarDefaultButtonStyle, Background);
+        lv_style_set_bg_opa(&gSidebarDefaultButtonStyle, LV_OPA_COVER);
+        lv_style_set_radius(&gSidebarDefaultButtonStyle, NoValue);
+        lv_style_set_margin_ver(&gSidebarDefaultButtonStyle, SmallValue);
+
+        /* Selected Sidebar Button*/
+        lv_style_set_bg_color(&gSidebarSelectedButtonStyle, SelectedButton);
+        lv_style_set_bg_opa(&gSidebarSelectedButtonStyle, LV_OPA_COVER);
+        lv_style_set_radius(&gSidebarSelectedButtonStyle, NoValue);
+        lv_style_set_margin_ver(&gSidebarSelectedButtonStyle, SmallValue);
 
         inited = true;
     }
