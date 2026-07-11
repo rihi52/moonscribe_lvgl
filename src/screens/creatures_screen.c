@@ -1,4 +1,5 @@
 #include "lvgl/lvgl.h"
+#include "../global.h"
 #include "creatures_screen.h"
 #include "../styles.h"
 #include "../components/buttons.h"
@@ -8,7 +9,16 @@
  *********************/
 static lv_obj_t *pCreaturesScreenSideBar;
 static lv_obj_t *pCreaturesBrowseButton;
+static lv_obj_t *pCreaturesEditButton;
+static lv_obj_t *pCreaturesMain;
 static void gvTestBrowse_eventcb(lv_event_t *e);
+static void gvTestEdit_eventcb(lv_event_t *e);
+
+/*********************
+ *  Static Prototypes
+ *********************/
+static void vCreaturesBrowsePage(lv_obj_t *pParent);
+static void vCreaturesEditPage(lv_obj_t *pParent);
 
 /*********************
  *  Global Variables
@@ -29,39 +39,115 @@ void gvCreaturesScreenCreate(void) {
         lv_screen_load(pCreaturesScreen);
     }
 
+    /* Header */
     lv_obj_t *pCreaturesHeader = lv_obj_create(pCreaturesScreen);
     lv_obj_add_style(pCreaturesHeader, &gGeneralStyle, 0);
-    lv_obj_set_size(pCreaturesHeader, lv_pct(100), lv_pct(15));
+    lv_obj_add_style(pCreaturesHeader, &gHeaderStyle, 0);
+    lv_obj_set_size(pCreaturesHeader, lv_pct(100), lv_pct(12));
 
+    lv_obj_t *pCreaturesBackIconContainer = lv_obj_create(pCreaturesHeader);
+    lv_obj_set_size(pCreaturesBackIconContainer, 100, lv_pct(100));
+    lv_obj_add_style(pCreaturesBackIconContainer, &gGeneralStyle, 0);
+    lv_obj_set_style_pad_all(pCreaturesBackIconContainer, 0, 0);
+    lv_obj_add_event_cb(pCreaturesBackIconContainer, gvActivateHomeScreen_eventcb, LV_EVENT_ALL, NULL);
+
+    lv_obj_t *pCreaturesBackIconLabel = lv_label_create(pCreaturesBackIconContainer);
+    lv_label_set_text(pCreaturesBackIconLabel, "Home");
+    lv_obj_set_style_text_font(pCreaturesBackIconLabel, &Metamorphous_24, 0);
+    lv_obj_set_style_text_color(pCreaturesBackIconLabel, White, 0);
+    lv_obj_center(pCreaturesBackIconLabel);
+
+    /* Lower portion*/
     lv_obj_t *pCreaturesLowerContainer = lv_obj_create(pCreaturesScreen);
     lv_obj_add_style(pCreaturesLowerContainer, &gBackgroundFlexRowScreenStyle, 0);
     lv_obj_add_style(pCreaturesLowerContainer, &gGeneralStyle, 0);
-    lv_obj_set_size(pCreaturesLowerContainer, lv_pct(100), lv_pct(85));
+    lv_obj_set_size(pCreaturesLowerContainer, lv_pct(100), lv_pct(88));
     lv_obj_set_style_pad_all(pCreaturesLowerContainer, 0, 0);
 
     /* Sidebar */
     lv_obj_t *pCreaturesSidebar = lv_obj_create(pCreaturesLowerContainer);
     lv_obj_add_style(pCreaturesSidebar, &gGeneralStyle, 0);
-    lv_obj_add_style(pCreaturesSidebar, &gBackgroundFlexColumnScreenStyle, 0);
-    lv_obj_set_style_pad_all(pCreaturesSidebar, 0, 0);
-    lv_obj_set_style_bg_color(pCreaturesSidebar, lv_color_make(255, 0, 0), 0); // Test Property, to be removed
+    lv_obj_add_style(pCreaturesSidebar, &gSidebarStyle, 0);
     lv_obj_set_size(pCreaturesSidebar, lv_pct(20), lv_pct(100));
 
     pCreaturesBrowseButton = gpSidebarButton(pCreaturesSidebar, "Browse");
-    lv_obj_add_event_cb(pCreaturesBrowseButton, gvTestBrowse_eventcb, LV_EVENT_CLICKED, NULL);
-    lv_obj_t *pCreaturesEditButton = gpSidebarButton(pCreaturesSidebar, "Edit");
+    lv_obj_set_state(pCreaturesBrowseButton, LV_STATE_CHECKED, true);
+    lv_obj_add_event_cb(pCreaturesBrowseButton, gvTestBrowse_eventcb, LV_EVENT_ALL, NULL);
+
+    pCreaturesEditButton = gpSidebarButton(pCreaturesSidebar, "Edit");
+    lv_obj_add_event_cb(pCreaturesEditButton, gvTestEdit_eventcb, LV_EVENT_ALL, NULL);
 
     /* Main View */
-    lv_obj_t *pCreaturesMain = lv_obj_create(pCreaturesLowerContainer);
+    pCreaturesMain = lv_obj_create(pCreaturesLowerContainer);
     lv_obj_add_style(pCreaturesMain, &gGeneralStyle, 0);
-    lv_obj_set_style_bg_color(pCreaturesMain, lv_color_make(0, 255, 0), 0); // Test Property, to be removed
     lv_obj_set_size(pCreaturesMain, lv_pct(80), lv_pct(100));
+
+    if (lv_obj_has_state(pCreaturesBrowseButton, LV_STATE_CHECKED)) {
+        vCreaturesBrowsePage(pCreaturesMain);
+    }
+    else if(lv_obj_has_state(pCreaturesEditButton, LV_STATE_CHECKED)) {
+        vCreaturesEditPage(pCreaturesMain);
+    }
 
 }
 
-void gvTestBrowse_eventcb(lv_event_t *e) {
+/*********************
+ *  Static Functions
+ *********************/
+static void vCreaturesBrowsePage(lv_obj_t *pParent) {
+    lv_obj_clean(pParent);
+    lv_obj_t *pBrowseLabel = lv_label_create(pParent);
+    lv_label_set_text(pBrowseLabel, "Browse");
+    lv_obj_set_style_text_font(pBrowseLabel, &Metamorphous_24, 0);
+    lv_obj_set_style_text_color(pBrowseLabel, White, 0);
+    lv_obj_center(pBrowseLabel);
+}
+
+static void vCreaturesEditPage(lv_obj_t *pParent) {
+    lv_obj_clean(pParent);
+    lv_obj_t *pEditLabel = lv_label_create(pParent);
+    lv_label_set_text(pEditLabel, "Edit");
+    lv_obj_set_style_text_font(pEditLabel, &Metamorphous_24, 0);
+    lv_obj_set_style_text_color(pEditLabel, White, 0);
+    lv_obj_center(pEditLabel);
+}
+
+/* Callbacks */
+static void gvTestBrowse_eventcb(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
-    if(event == LV_EVENT_CLICKED){
-        LV_LOG_USER("checked: %d", lv_obj_has_state(pCreaturesBrowseButton, LV_STATE_CHECKED));
+    if(event == LV_EVENT_HOVER_OVER){
+        lv_obj_set_style_bg_color(pCreaturesBrowseButton, SelectedButton, 0);
+    }
+    else if(event == LV_EVENT_HOVER_LEAVE){
+        lv_obj_set_style_bg_color(pCreaturesBrowseButton, Background, 0);
+    }
+    else if(event == LV_EVENT_CLICKED){
+        if (lv_obj_has_state(pCreaturesEditButton, LV_STATE_CHECKED)) {
+            lv_obj_set_state(pCreaturesEditButton, LV_STATE_CHECKED, false);
+        }
+        if (!lv_obj_has_state(pCreaturesBrowseButton, LV_STATE_CHECKED)) {
+            lv_obj_set_state(pCreaturesBrowseButton, LV_STATE_CHECKED, true);
+            vCreaturesBrowsePage(pCreaturesMain);
+        }
+    }
+}
+
+static void gvTestEdit_eventcb(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    if(event == LV_EVENT_HOVER_OVER){
+        lv_obj_set_style_bg_color(pCreaturesEditButton, SelectedButton, 0);
+    }
+    else if(event == LV_EVENT_HOVER_LEAVE){
+        lv_obj_set_style_bg_color(pCreaturesEditButton, Background, 0);
+    }
+    else if(event == LV_EVENT_CLICKED){
+        if (lv_obj_has_state(pCreaturesBrowseButton, LV_STATE_CHECKED)) {
+            lv_obj_set_state(pCreaturesBrowseButton, LV_STATE_CHECKED, false);
+        }
+
+        if (!lv_obj_has_state(pCreaturesEditButton, LV_STATE_CHECKED)) {
+            lv_obj_set_state(pCreaturesEditButton, LV_STATE_CHECKED, true);
+            vCreaturesEditPage(pCreaturesMain);
+        }
     }
 }

@@ -22,8 +22,7 @@ lv_obj_t *gpMainButton(lv_obj_t *pParent, const char *pButtonLabel) {
 lv_obj_t *gpSidebarButton(lv_obj_t *pParent, const char *pButtonLabel) {
     lv_obj_t *pCreatedButton = lv_button_create(pParent);
     lv_obj_remove_style_all(pCreatedButton);
-    lv_obj_add_flag(pCreatedButton, LV_OBJ_FLAG_CHECKABLE);
-    lv_obj_set_size(pCreatedButton, lv_pct(100), 50);
+    lv_obj_set_size(pCreatedButton, lv_pct(100), 75);
     lv_obj_center(pCreatedButton);
     lv_obj_add_style(pCreatedButton, &gSidebarDefaultButtonStyle, 0);
     lv_obj_add_style(pCreatedButton, &gSidebarSelectedButtonStyle, LV_STATE_CHECKED);

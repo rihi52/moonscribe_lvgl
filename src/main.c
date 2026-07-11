@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
   bool simulator_mode = false;
   lv_display_t* display = lv_windows_create_display(
       L"LVGL Display Window",
-      720, 480,
+      800, 560,
       zoom_level, allow_dpi_override, simulator_mode);
   if (!display) return -1;
   lv_lock();

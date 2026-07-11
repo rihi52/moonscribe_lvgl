@@ -12,6 +12,8 @@ extern lv_color_t SelectedButton;
 extern lv_color_t White;
 
 /* Styles */
+extern lv_style_t gHeaderStyle;
+extern lv_style_t gSidebarStyle;
 extern lv_style_t gBackgroundFlexColumnScreenStyle;
 extern lv_style_t gBackgroundFlexRowScreenStyle;
 extern lv_style_t gHomeScreenButtonStyle;
