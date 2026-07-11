@@ -209,6 +209,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
         -Wunreachable-code
         -Wfloat-conversion
         -Wstrict-aliasing
+        -Wshadow
     )
 
 if (ASAN)

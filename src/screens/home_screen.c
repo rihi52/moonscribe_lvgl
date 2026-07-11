@@ -19,13 +19,15 @@ lv_obj_t * pHomeScreen;
  *  Global Functions
  *********************/
 
-void gvHomeScreenCreate(void) {
+void gvHomeScreenCreate(void)
+{
     pHomeScreen = lv_obj_create(NULL);
     lv_obj_add_style(pHomeScreen, &gGeneralStyle, 0);
     lv_obj_add_style(pHomeScreen, &gBackgroundFlexColumnScreenStyle, 0);
     lv_obj_set_align(pHomeScreen, LV_ALIGN_CENTER);
 
-    if (lv_screen_active() != pHomeScreen){
+    if (lv_screen_active() != pHomeScreen)
+    {
         lv_screen_load(pHomeScreen);
     }
 
@@ -40,6 +42,7 @@ void gvHomeScreenCreate(void) {
     lv_obj_add_event_cb(pCreaturesButton, gvActivateCreaturesScreen_eventcb, LV_EVENT_CLICKED, NULL);
 
     lv_obj_t *pPlayersButton = gpMainButton(pHomeScreen, "Players");
+    lv_obj_add_event_cb(pPlayersButton, gvActivatePlayersScreen_eventcb, LV_EVENT_CLICKED, NULL);
 }
 
 /*********************

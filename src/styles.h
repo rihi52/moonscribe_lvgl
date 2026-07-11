@@ -26,4 +26,4 @@ extern lv_style_t gGeneralStyle;
  *********************/
 void gvStylesInit(void);
 
-#endif
+#endif /* STYLES_H */

@@ -11,6 +11,7 @@
  *  Global Prototypes
  *********************/
 void gvActivateCreaturesScreen_eventcb(lv_event_t *e);
+void gvActivatePlayersScreen_eventcb(lv_event_t *e);
 void gvActivateHomeScreen_eventcb(lv_event_t *e);
 
 #endif  /* GLOBAL_H */

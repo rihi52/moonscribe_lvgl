@@ -5,7 +5,8 @@
 /*********************
  *  Global Functions
  *********************/
-lv_obj_t *gpMainButton(lv_obj_t *pParent, const char *pButtonLabel) {
+lv_obj_t *gpMainButton(lv_obj_t *pParent, const char *pButtonLabel)
+{
     lv_obj_t *pCreatedButton = lv_button_create(pParent);
     lv_obj_add_style(pCreatedButton, &gHomeScreenButtonStyle, 0);
     lv_obj_set_size(pCreatedButton, 300, 50);
@@ -19,7 +20,8 @@ lv_obj_t *gpMainButton(lv_obj_t *pParent, const char *pButtonLabel) {
     return pCreatedButton;
 }
 
-lv_obj_t *gpSidebarButton(lv_obj_t *pParent, const char *pButtonLabel) {
+lv_obj_t *gpSidebarButton(lv_obj_t *pParent, const char *pButtonLabel)
+{
     lv_obj_t *pCreatedButton = lv_button_create(pParent);
     lv_obj_remove_style_all(pCreatedButton);
     lv_obj_set_size(pCreatedButton, lv_pct(100), 75);
