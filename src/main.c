@@ -19,8 +19,11 @@
   #include <unistd.h>
   #include <pthread.h>
 #endif
+
 #include "lvgl/lvgl.h"
 #include "screens/home_screen.h"
+#include "screens/db_screen.h"
+#include "components/sidebar.h"
 #include "styles.h"
 // #include "lvgl/examples/lv_examples.h"
 // #include "lvgl/demos/lv_demos.h"
@@ -39,10 +42,18 @@
 /**********************
  *  STATIC PROTOTYPES
  **********************/
+static void gvActivateCreaturesScreen_eventcb(lv_event_t *e);
+static void gvTestBrowse_eventcb(lv_event_t *e);
+static void gvTestEdit_eventcb(lv_event_t *e);
 
 /**********************
  *  STATIC VARIABLES
  **********************/
+  static DbScreen CreaturesScreen;
+  static Sidebar CreaturesScreenSidebar;
+
+  static DbScreen PlayersScreen;
+  static Sidebar PlayersScreenSidebar;
 
 /**********************
  *      MACROS
@@ -74,8 +85,16 @@ int main(int argc, char *argv[])
   lv_indev_t* encoder_device = lv_windows_acquire_encoder_indev(display);
   if (!encoder_device)  return -1;
   // lv_demo_widgets();
+  // lv_obj_t *pMainScreen = lv_obj_create(NULL);
+  // lv_screen_load(pMainScreen);
   gvStylesInit();
-  gvHomeScreenCreate();
+  gvDbScreenInit(&CreaturesScreen, &CreaturesScreenSidebar);
+  gvDbScreenBuild(&CreaturesScreen, gvTestBrowse_eventcb, gvTestEdit_eventcb);
+  lv_obj_move_background(CreaturesScreen.pOverallContainer);
+  // lv_obj_clean(pMainScreen);
+
+  //lv_obj_add_flag(CreaturesScreen.pOverallContainer, LV_OBJ_FLAG_HIDDEN);
+  gvHomeScreenCreate(gvActivateCreaturesScreen_eventcb);
   lv_unlock();
   while (1)
   {
@@ -85,6 +104,66 @@ int main(int argc, char *argv[])
       lv_sleep_ms(time_till_next);
   }
   return 0;
+}
+
+static void gvActivateCreaturesScreen_eventcb(lv_event_t *e)
+{
+    lv_event_code_t event = lv_event_get_code(e);
+    if(event == LV_EVENT_CLICKED)
+    {
+      lv_screen_load(CreaturesScreen.pOverallContainer);
+    }
+}
+
+static void gvTestBrowse_eventcb(lv_event_t *e)
+{
+    lv_event_code_t event = lv_event_get_code(e);
+    if(event == LV_EVENT_HOVER_OVER)
+    {
+        lv_obj_set_style_bg_color(CreaturesScreenSidebar.pBrowseButton, SelectedButton, 0);
+    }
+    else if(event == LV_EVENT_HOVER_LEAVE)
+    {
+        lv_obj_set_style_bg_color(CreaturesScreenSidebar.pBrowseButton, Background, 0);
+    }
+    else if(event == LV_EVENT_CLICKED)
+    {
+        if (lv_obj_has_state(CreaturesScreenSidebar.pEditButton, LV_STATE_CHECKED))
+        {
+            lv_obj_set_state(CreaturesScreenSidebar.pEditButton, LV_STATE_CHECKED, false);
+        }
+        if (!lv_obj_has_state(CreaturesScreenSidebar.pBrowseButton, LV_STATE_CHECKED))
+        {
+            lv_obj_set_state(CreaturesScreenSidebar.pBrowseButton, LV_STATE_CHECKED, true);
+            vDbBrowsePage(CreaturesScreen.pMainViewContainer);
+        }
+    }
+}
+
+static void gvTestEdit_eventcb(lv_event_t *e)
+{
+    lv_event_code_t event = lv_event_get_code(e);
+    if(event == LV_EVENT_HOVER_OVER)
+    {
+        lv_obj_set_style_bg_color(CreaturesScreenSidebar.pEditButton, SelectedButton, 0);
+    }
+    else if(event == LV_EVENT_HOVER_LEAVE)
+    {
+        lv_obj_set_style_bg_color(CreaturesScreenSidebar.pEditButton, Background, 0);
+    }
+    else if(event == LV_EVENT_CLICKED)
+    {
+        if (lv_obj_has_state(CreaturesScreenSidebar.pBrowseButton, LV_STATE_CHECKED))
+        {
+            lv_obj_set_state(CreaturesScreenSidebar.pBrowseButton, LV_STATE_CHECKED, false);
+        }
+
+        if (!lv_obj_has_state(CreaturesScreenSidebar.pEditButton, LV_STATE_CHECKED))
+        {
+            lv_obj_set_state(CreaturesScreenSidebar.pEditButton, LV_STATE_CHECKED, true);
+            vDbEditPage(CreaturesScreen.pMainViewContainer);
+        }
+    }
 }
 
 /**********************

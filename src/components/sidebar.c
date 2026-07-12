@@ -7,19 +7,24 @@
 /*********************
  *  Global Functions
  *********************/
-Sidebar *pCreateSidebar(lv_obj_t *pParent, lv_event_cb_t BrowseButtonCallback, lv_event_cb_t EditButtonCallback) {
-    Sidebar *pCreatedSidebar = lv_malloc(sizeof(*pCreatedSidebar));
+void SidebarInit(Sidebar *pSidebarToInit)
+{
+    pSidebarToInit->pBrowseButton = NULL;
+    pSidebarToInit->pEditButton = NULL;
+    pSidebarToInit->pSidebarContainer = NULL;
+}
 
-    pCreatedSidebar->pSidebarContainer = lv_obj_create(pParent);
-    lv_obj_add_style(pCreatedSidebar->pSidebarContainer, &gGeneralStyle, 0);
-    lv_obj_add_style(pCreatedSidebar->pSidebarContainer, &gSidebarStyle, 0);
-    lv_obj_set_size(pCreatedSidebar->pSidebarContainer, lv_pct(20), lv_pct(100));
+void pSidebarBuild(Sidebar *pSidebarToBuild, lv_obj_t *pParent, lv_event_cb_t BrowseButtonCallback, lv_event_cb_t EditButtonCallback)
+{
 
-    pCreatedSidebar->pBrowseButton = gpSidebarButton(pCreatedSidebar->pSidebarContainer, "Browse");
-    lv_obj_add_event_cb(pCreatedSidebar->pBrowseButton, BrowseButtonCallback, LV_EVENT_ALL, NULL);
+    pSidebarToBuild->pSidebarContainer = lv_obj_create(pParent);
+    lv_obj_add_style(pSidebarToBuild->pSidebarContainer, &gGeneralStyle, 0);
+    lv_obj_add_style(pSidebarToBuild->pSidebarContainer, &gSidebarStyle, 0);
+    lv_obj_set_size(pSidebarToBuild->pSidebarContainer, lv_pct(20), lv_pct(100));
 
-    pCreatedSidebar->pEditButton = gpSidebarButton(pCreatedSidebar->pSidebarContainer, "Edit");
-    lv_obj_add_event_cb(pCreatedSidebar->pEditButton, EditButtonCallback, LV_EVENT_ALL, NULL);
+    pSidebarToBuild->pBrowseButton = gpSidebarButton(pSidebarToBuild->pSidebarContainer, "Browse");
+    lv_obj_add_event_cb(pSidebarToBuild->pBrowseButton, BrowseButtonCallback, LV_EVENT_ALL, NULL);
 
-    return pCreatedSidebar;
+    pSidebarToBuild->pEditButton = gpSidebarButton(pSidebarToBuild->pSidebarContainer, "Edit");
+    lv_obj_add_event_cb(pSidebarToBuild->pEditButton, EditButtonCallback, LV_EVENT_ALL, NULL);
 }

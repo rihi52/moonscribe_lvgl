@@ -19,11 +19,12 @@ lv_obj_t * pHomeScreen;
  *  Global Functions
  *********************/
 
-void gvHomeScreenCreate(void)
+void gvHomeScreenCreate(lv_event_cb_t CreaturesButtonCallback)
 {
     pHomeScreen = lv_obj_create(NULL);
     lv_obj_add_style(pHomeScreen, &gGeneralStyle, 0);
     lv_obj_add_style(pHomeScreen, &gBackgroundFlexColumnScreenStyle, 0);
+    lv_obj_set_size(pHomeScreen, lv_pct(100), lv_pct(100));
     lv_obj_set_align(pHomeScreen, LV_ALIGN_CENTER);
 
     if (lv_screen_active() != pHomeScreen)
@@ -39,7 +40,7 @@ void gvHomeScreenCreate(void)
     lv_obj_t *pCombatButton = gpMainButton(pHomeScreen, "Combat");
 
     lv_obj_t *pCreaturesButton = gpMainButton(pHomeScreen, "Creatures");
-    lv_obj_add_event_cb(pCreaturesButton, gvActivateCreaturesScreen_eventcb, LV_EVENT_CLICKED, NULL);
+    lv_obj_add_event_cb(pCreaturesButton, CreaturesButtonCallback, LV_EVENT_CLICKED, NULL);
 
     lv_obj_t *pPlayersButton = gpMainButton(pHomeScreen, "Players");
     lv_obj_add_event_cb(pPlayersButton, gvActivatePlayersScreen_eventcb, LV_EVENT_CLICKED, NULL);

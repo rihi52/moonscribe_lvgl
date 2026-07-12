@@ -103,7 +103,7 @@ void gvStylesInit(void){
         /* Common flex row style */
         lv_style_set_flex_flow(&gBackgroundFlexRowScreenStyle, LV_FLEX_FLOW_ROW);
         lv_style_set_layout(&gBackgroundFlexRowScreenStyle, LV_LAYOUT_FLEX);
-        lv_style_set_flex_main_place(&gBackgroundFlexRowScreenStyle, LV_FLEX_ALIGN_CENTER);
+        lv_style_set_flex_main_place(&gBackgroundFlexRowScreenStyle, LV_FLEX_ALIGN_START);
         lv_style_set_flex_cross_place(&gBackgroundFlexRowScreenStyle, LV_FLEX_ALIGN_CENTER);
         lv_style_set_flex_track_place(&gBackgroundFlexRowScreenStyle, LV_FLEX_ALIGN_CENTER);
         lv_style_set_pad_column(&gBackgroundFlexRowScreenStyle, 0);

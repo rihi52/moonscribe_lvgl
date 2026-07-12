@@ -68,10 +68,10 @@ void gvPlayersScreenCreate(void)
     lv_obj_set_style_pad_all(pPlayersLowerContainer, 0, 0);
 
     /* Sidebar */
-    pPlayersSidebar = pCreateSidebar( pPlayersLowerContainer
-                                      , gvTestBrowse_eventcb
-                                      , gvTestEdit_eventcb );
-    lv_obj_set_state(pPlayersSidebar->pBrowseButton, LV_STATE_CHECKED, true);
+    // pPlayersSidebar = pSidebarBuild( pPlayersLowerContainer
+    //                                   , gvTestBrowse_eventcb
+    //                                   , gvTestEdit_eventcb );
+    // lv_obj_set_state(pPlayersSidebar->pBrowseButton, LV_STATE_CHECKED, true);
 
     /* Main View */
     pPlayersMain = lv_obj_create(pPlayersLowerContainer);

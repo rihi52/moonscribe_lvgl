@@ -68,10 +68,10 @@ void gvCreaturesScreenCreate(void)
     lv_obj_set_style_pad_all(pCreaturesLowerContainer, 0, 0);
 
     /* Sidebar */
-    pCreaturesSidebar = pCreateSidebar( pCreaturesLowerContainer
-                                      , gvTestBrowse_eventcb
-                                      , gvTestEdit_eventcb );
-    lv_obj_set_state(pCreaturesSidebar->pBrowseButton, LV_STATE_CHECKED, true);
+    // pCreaturesSidebar = pSidebarBuild( pCreaturesLowerContainer
+    //                                   , gvTestBrowse_eventcb
+    //                                   , gvTestEdit_eventcb );
+    // lv_obj_set_state(pCreaturesSidebar->pBrowseButton, LV_STATE_CHECKED, true);
 
     /* Main View */
     pCreaturesMain = lv_obj_create(pCreaturesLowerContainer);
