@@ -77,8 +77,8 @@ void gvStylesInit(void){
         lv_style_set_flex_main_place(&gHeaderStyle, LV_FLEX_ALIGN_START);
         lv_style_set_flex_cross_place(&gHeaderStyle, LV_FLEX_ALIGN_CENTER);
         lv_style_set_flex_track_place(&gHeaderStyle, LV_FLEX_ALIGN_CENTER);
-        lv_style_set_pad_all(&gHeaderStyle, 0);
-        lv_style_set_pad_column(&gHeaderStyle, 0);
+        lv_style_set_pad_all(&gHeaderStyle, SmallValue);
+        lv_style_set_pad_column(&gHeaderStyle, NoValue);
 
         /* Sidebar Style */
         lv_style_set_border_color(&gSidebarStyle, White);
@@ -89,8 +89,9 @@ void gvStylesInit(void){
         lv_style_set_flex_main_place(&gSidebarStyle, LV_FLEX_ALIGN_START);
         lv_style_set_flex_cross_place(&gSidebarStyle, LV_FLEX_ALIGN_CENTER);
         lv_style_set_flex_track_place(&gSidebarStyle, LV_FLEX_ALIGN_CENTER);
-        lv_style_set_pad_all(&gSidebarStyle, 0);
-        lv_style_set_pad_row(&gSidebarStyle, 0);
+        lv_style_set_pad_ver(&gSidebarStyle, SmallValue);
+        lv_style_set_pad_hor(&gSidebarStyle, SmallValue);
+        lv_style_set_pad_row(&gSidebarStyle, NoValue);
 
         /* Common flex column style */
         lv_style_set_flex_flow(&gBackgroundFlexColumnScreenStyle, LV_FLEX_FLOW_COLUMN);
@@ -116,14 +117,16 @@ void gvStylesInit(void){
         /* Default sidebar button */
         lv_style_set_bg_color(&gSidebarDefaultButtonStyle, Background);
         lv_style_set_bg_opa(&gSidebarDefaultButtonStyle, LV_OPA_COVER);
-        lv_style_set_radius(&gSidebarDefaultButtonStyle, NoValue);
-        lv_style_set_margin_ver(&gSidebarDefaultButtonStyle, NoValue);
+        lv_style_set_radius(&gSidebarDefaultButtonStyle, MediumValue);
+        lv_style_set_margin_ver(&gSidebarDefaultButtonStyle, SmallValue);
 
         /* Selected sidebar button*/
         lv_style_set_bg_color(&gSidebarSelectedButtonStyle, SelectedButton);
         lv_style_set_bg_opa(&gSidebarSelectedButtonStyle, LV_OPA_COVER);
-        lv_style_set_radius(&gSidebarSelectedButtonStyle, NoValue);
-        lv_style_set_margin_ver(&gSidebarSelectedButtonStyle, NoValue);
+        lv_style_set_radius(&gSidebarSelectedButtonStyle, MediumValue);
+        lv_style_set_margin_ver(&gSidebarSelectedButtonStyle, SmallValue);
+        lv_style_set_border_width(&gSidebarSelectedButtonStyle, 1);
+        lv_style_set_border_color(&gSidebarSelectedButtonStyle, White);
 
         inited = true;
     }

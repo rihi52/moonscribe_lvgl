@@ -43,6 +43,7 @@ AppState gAppState;
 /**********************
  *  STATIC PROTOTYPES
  **********************/
+static void gvActivateEncountersScreen_eventcb(lv_event_t *e);
 static void gvActivateCreaturesScreen_eventcb(lv_event_t *e);
 static void gvActivatePlayersScreen_eventcb(lv_event_t *e);
 static void gvActivateHomeScreen_eventcb(lv_event_t *e);
@@ -52,6 +53,9 @@ static void gvTestEdit_eventcb(lv_event_t *e);
 /**********************
  *  STATIC VARIABLES
  **********************/
+  static DbScreen EncountersScreen;
+  static Sidebar EncountersScreenSidebar;
+
   static DbScreen CreaturesScreen;
   static Sidebar CreaturesScreenSidebar;
 
@@ -93,16 +97,20 @@ int main(int argc, char *argv[])
 
     gvStylesInit();
 
+    gvDbScreenInit(&EncountersScreen, &EncountersScreenSidebar);
+    gvDbScreenBuild(&EncountersScreen, gvTestBrowse_eventcb, gvTestEdit_eventcb, gvActivateHomeScreen_eventcb, "Encounters");
+
     gvDbScreenInit(&CreaturesScreen, &CreaturesScreenSidebar);
     gvDbScreenBuild(&CreaturesScreen, gvTestBrowse_eventcb, gvTestEdit_eventcb, gvActivateHomeScreen_eventcb, "Creatures");
 
     gvDbScreenInit(&PlayersScreen, &PlayersScreenSidebar);
     gvDbScreenBuild(&PlayersScreen, gvTestBrowse_eventcb, gvTestEdit_eventcb, gvActivateHomeScreen_eventcb, "Players");
 
+    lv_obj_move_background(EncountersScreen.pOverallContainer);
     lv_obj_move_background(CreaturesScreen.pOverallContainer);
     lv_obj_move_background(PlayersScreen.pOverallContainer);
 
-    gvHomeScreenCreate(gvActivateCreaturesScreen_eventcb, gvActivatePlayersScreen_eventcb);
+    gvHomeScreenCreate(gvActivateEncountersScreen_eventcb, gvActivateCreaturesScreen_eventcb, gvActivatePlayersScreen_eventcb);
 
     lv_unlock();
     while (1)
@@ -118,6 +126,16 @@ int main(int argc, char *argv[])
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+static void gvActivateEncountersScreen_eventcb(lv_event_t *e)
+{
+    lv_event_code_t event = lv_event_get_code(e);
+    if(event == LV_EVENT_CLICKED)
+    {
+      lv_screen_load(EncountersScreen.pOverallContainer);
+      gAppState.pLastLoadedDbScreen = &EncountersScreen;
+      gAppState.pActiveScreen = EncountersScreen.pOverallContainer;
+    }
+}
 
 static void gvActivateCreaturesScreen_eventcb(lv_event_t *e)
 {
@@ -148,11 +166,11 @@ static void gvActivateHomeScreen_eventcb(lv_event_t *e)
     pEventScreen = lv_event_get_user_data(e);
     if(event == LV_EVENT_HOVER_OVER)
     {
-        lv_obj_set_style_bg_color(pEventScreen->pHomeContainer, SelectedButton, 0);
+        lv_obj_set_style_bg_color(pEventScreen->pHomeButton, SelectedButton, 0);
     }
     else if(event == LV_EVENT_HOVER_LEAVE)
     {
-        lv_obj_set_style_bg_color(pEventScreen->pHomeContainer, Background, 0);
+        lv_obj_set_style_bg_color(pEventScreen->pHomeButton, Background, 0);
     }
     else if(event == LV_EVENT_CLICKED)
     {

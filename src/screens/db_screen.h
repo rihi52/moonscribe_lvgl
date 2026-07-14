@@ -17,7 +17,7 @@ typedef struct
 {
     lv_obj_t *pOverallContainer;
     lv_obj_t *pHeader;
-    lv_obj_t *pHomeContainer;
+    lv_obj_t *pHomeButton;
     lv_obj_t *pHomeLabel;
     lv_obj_t *pLowerContainer;
     Sidebar *pSidebar;

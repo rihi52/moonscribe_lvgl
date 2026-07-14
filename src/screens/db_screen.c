@@ -11,8 +11,6 @@ static Sidebar *pDbSidebar;
 static lv_obj_t *pDbBrowseButton;
 static lv_obj_t *pDbEditButton;
 static lv_obj_t *pDbMain;
-// static void gvTestBrowse_eventcb(lv_event_t *e);
-// static void gvTestEdit_eventcb(lv_event_t *e);
 
 /*********************
  *  Static Prototypes
@@ -32,7 +30,7 @@ void gvDbScreenInit(DbScreen *pScreenInit, Sidebar *pSidebarInit)
 
     pScreenInit->pOverallContainer = NULL;
     pScreenInit->pHeader = NULL;
-    pScreenInit->pHomeContainer = NULL;
+    pScreenInit->pHomeButton = NULL;
     pScreenInit->pHomeLabel = NULL;
     pScreenInit->pLowerContainer = NULL;
     pScreenInit->pSidebar = pSidebarInit;
@@ -65,13 +63,14 @@ void gvDbScreenBuild( DbScreen *pScreenToBuild
     lv_obj_add_style(pScreenToBuild->pHeader, &gHeaderStyle, 0);
     lv_obj_set_size(pScreenToBuild->pHeader, lv_pct(100), lv_pct(12));
 
-    pScreenToBuild->pHomeContainer = lv_obj_create(pScreenToBuild->pHeader);
-    lv_obj_set_size(pScreenToBuild->pHomeContainer, 100, lv_pct(100));
-    lv_obj_add_style(pScreenToBuild->pHomeContainer, &gGeneralStyle, 0);
-    lv_obj_set_style_pad_all(pScreenToBuild->pHomeContainer, 0, 0);
-    lv_obj_add_event_cb(pScreenToBuild->pHomeContainer, HomeButtonCallback, LV_EVENT_ALL, pScreenToBuild);
+    pScreenToBuild->pHomeButton = lv_obj_create(pScreenToBuild->pHeader);
+    lv_obj_set_size(pScreenToBuild->pHomeButton, 100, lv_pct(100));
+    lv_obj_add_style(pScreenToBuild->pHomeButton, &gSidebarDefaultButtonStyle, 0);
+    lv_obj_set_style_border_width(pScreenToBuild->pHomeButton, 0, 0);
+    lv_obj_set_style_pad_all(pScreenToBuild->pHomeButton, 0, 0);
+    lv_obj_add_event_cb(pScreenToBuild->pHomeButton, HomeButtonCallback, LV_EVENT_ALL, pScreenToBuild);
 
-    pScreenToBuild->pHomeLabel = lv_label_create(pScreenToBuild->pHomeContainer);
+    pScreenToBuild->pHomeLabel = lv_label_create(pScreenToBuild->pHomeButton);
     lv_label_set_text(pScreenToBuild->pHomeLabel, "Home");
     lv_obj_set_style_text_font(pScreenToBuild->pHomeLabel, &Metamorphous_24, 0);
     lv_obj_set_style_text_color(pScreenToBuild->pHomeLabel, White, 0);
