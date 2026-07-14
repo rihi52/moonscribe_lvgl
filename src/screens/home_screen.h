@@ -11,6 +11,6 @@ extern lv_obj_t * pHomeScreen;
 /*********************
  *  Global Prototypes
  *********************/
-void gvHomeScreenCreate(lv_event_cb_t CreaturesButtonCallback);
+void gvHomeScreenCreate(lv_event_cb_t CreaturesButtonCallback, lv_event_cb_t PlayersButtonCallback);
 
 #endif /* HOME_SCREEN_H */

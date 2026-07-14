@@ -3,7 +3,6 @@
 #include "db_screen.h"
 #include "../styles.h"
 #include "../components/buttons.h"
-#include "../components/sidebar.h"
 
 /*********************
  *  Local Variables
@@ -41,7 +40,11 @@ void gvDbScreenInit(DbScreen *pScreenInit, Sidebar *pSidebarInit)
 
 }
 
-void gvDbScreenBuild(DbScreen *pScreenToBuild, lv_event_cb_t BrowseButtonCallback, lv_event_cb_t EditButtonCallback)
+void gvDbScreenBuild( DbScreen *pScreenToBuild
+                    , lv_event_cb_t BrowseButtonCallback
+                    , lv_event_cb_t EditButtonCallback
+                    , lv_event_cb_t HomeButtonCallback
+                    , const char *WindowLabel )
 {
     pScreenToBuild->pOverallContainer = lv_obj_create(NULL);
     lv_obj_add_style(pScreenToBuild->pOverallContainer, &gGeneralStyle, 0);
@@ -66,7 +69,7 @@ void gvDbScreenBuild(DbScreen *pScreenToBuild, lv_event_cb_t BrowseButtonCallbac
     lv_obj_set_size(pScreenToBuild->pHomeContainer, 100, lv_pct(100));
     lv_obj_add_style(pScreenToBuild->pHomeContainer, &gGeneralStyle, 0);
     lv_obj_set_style_pad_all(pScreenToBuild->pHomeContainer, 0, 0);
-    lv_obj_add_event_cb(pScreenToBuild->pHomeContainer, gvActivateHomeScreen_eventcb, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(pScreenToBuild->pHomeContainer, HomeButtonCallback, LV_EVENT_ALL, pScreenToBuild);
 
     pScreenToBuild->pHomeLabel = lv_label_create(pScreenToBuild->pHomeContainer);
     lv_label_set_text(pScreenToBuild->pHomeLabel, "Home");
@@ -83,10 +86,12 @@ void gvDbScreenBuild(DbScreen *pScreenToBuild, lv_event_cb_t BrowseButtonCallbac
     lv_obj_set_style_pad_all(pScreenToBuild->pLowerContainer, 0, 0);
 
     /* Sidebar */
-    pSidebarBuild( pScreenToBuild->pSidebar, pScreenToBuild->pLowerContainer
-                                      , BrowseButtonCallback
-                                      , EditButtonCallback );
-    lv_obj_set_state( pScreenToBuild->pSidebar->pEditButton, LV_STATE_CHECKED, true);
+    pSidebarBuild( pScreenToBuild->pSidebar
+                 , pScreenToBuild->pLowerContainer
+                 , pScreenToBuild
+                 , BrowseButtonCallback
+                 , EditButtonCallback );
+    lv_obj_set_state( pScreenToBuild->pSidebar->pBrowseButton, LV_STATE_CHECKED, true);
 
     /* Main View */
     pScreenToBuild->pMainViewContainer = lv_obj_create(pScreenToBuild->pLowerContainer);
@@ -95,92 +100,68 @@ void gvDbScreenBuild(DbScreen *pScreenToBuild, lv_event_cb_t BrowseButtonCallbac
 
     if (lv_obj_has_state(pScreenToBuild->pSidebar->pBrowseButton, LV_STATE_CHECKED))
     {
-        vDbBrowsePage(pScreenToBuild->pMainViewContainer);
+        vDbBrowsePage(pScreenToBuild->pMainViewContainer, WindowLabel);
     }
     else if(lv_obj_has_state(pScreenToBuild->pSidebar->pEditButton, LV_STATE_CHECKED))
     {
-        vDbEditPage(pScreenToBuild->pMainViewContainer);
+        vDbEditPage(pScreenToBuild->pMainViewContainer, WindowLabel);
     }
 
 }
 
+/* Sidebar */
+void SidebarInit(Sidebar *pSidebarToInit)
+{
+    pSidebarToInit->pBrowseButton = NULL;
+    pSidebarToInit->pEditButton = NULL;
+    pSidebarToInit->pSidebarContainer = NULL;
+}
+
+void pSidebarBuild(Sidebar *pSidebarToBuild
+                  , lv_obj_t *pParent
+                  , DbScreen *pParentScreen
+                  , lv_event_cb_t BrowseButtonCallback
+                  , lv_event_cb_t EditButtonCallback )
+{
+
+    pSidebarToBuild->pSidebarContainer = lv_obj_create(pParent);
+    lv_obj_add_style(pSidebarToBuild->pSidebarContainer, &gGeneralStyle, 0);
+    lv_obj_add_style(pSidebarToBuild->pSidebarContainer, &gSidebarStyle, 0);
+    lv_obj_set_size(pSidebarToBuild->pSidebarContainer, lv_pct(20), lv_pct(100));
+
+    pSidebarToBuild->pBrowseButton = gpSidebarButton(pSidebarToBuild->pSidebarContainer, "Browse");
+    lv_obj_add_event_cb(pSidebarToBuild->pBrowseButton, BrowseButtonCallback, LV_EVENT_ALL, pParentScreen);
+
+    pSidebarToBuild->pEditButton = gpSidebarButton(pSidebarToBuild->pSidebarContainer, "Edit");
+    lv_obj_add_event_cb(pSidebarToBuild->pEditButton, EditButtonCallback, LV_EVENT_ALL, pParentScreen);
+}
+
+
 /*********************
  *  Static Functions
  *********************/
-void vDbBrowsePage(lv_obj_t *pParent)
+void vDbBrowsePage(lv_obj_t *pParent, const char *WindowLabel)
 {
     lv_obj_t *pBrowseContainer = lv_obj_create(pParent);
     lv_obj_add_style(pBrowseContainer, &gGeneralStyle, 0);
     lv_obj_set_size(pBrowseContainer, lv_pct(100), lv_pct(100));
 
     lv_obj_t *pBrowseLabel = lv_label_create(pBrowseContainer);
-    lv_label_set_text(pBrowseLabel, "Browse");
+    lv_label_set_text(pBrowseLabel, WindowLabel);
     lv_obj_set_style_text_font(pBrowseLabel, &Metamorphous_24, 0);
     lv_obj_set_style_text_color(pBrowseLabel, White, 0);
     lv_obj_center(pBrowseLabel);
 }
 
-void vDbEditPage(lv_obj_t *pParent)
+void vDbEditPage(lv_obj_t *pParent, const char *WindowLabel)
 {
     lv_obj_t *pEditContainer = lv_obj_create(pParent);
     lv_obj_add_style(pEditContainer, &gGeneralStyle, 0);
     lv_obj_set_size(pEditContainer, lv_pct(100), lv_pct(100));
 
     lv_obj_t *pEditLabel = lv_label_create(pEditContainer);
-    lv_label_set_text(pEditLabel, "Edit");
+    lv_label_set_text(pEditLabel, WindowLabel);
     lv_obj_set_style_text_font(pEditLabel, &Metamorphous_24, 0);
     lv_obj_set_style_text_color(pEditLabel, White, 0);
     lv_obj_center(pEditLabel);
 }
-
-/* Callbacks */
-// static void gvTestBrowse_eventcb(lv_event_t *e)
-// {
-//     lv_event_code_t event = lv_event_get_code(e);
-//     if(event == LV_EVENT_HOVER_OVER)
-//     {
-//         lv_obj_set_style_bg_color(pDbSidebar->pBrowseButton, SelectedButton, 0);
-//     }
-//     else if(event == LV_EVENT_HOVER_LEAVE)
-//     {
-//         lv_obj_set_style_bg_color(pDbSidebar->pBrowseButton, Background, 0);
-//     }
-//     else if(event == LV_EVENT_CLICKED)
-//     {
-//         if (lv_obj_has_state(pDbSidebar->pEditButton, LV_STATE_CHECKED))
-//         {
-//             lv_obj_set_state(pDbSidebar->pEditButton, LV_STATE_CHECKED, false);
-//         }
-//         if (!lv_obj_has_state(pDbSidebar->pBrowseButton, LV_STATE_CHECKED))
-//         {
-//             lv_obj_set_state(pDbSidebar->pBrowseButton, LV_STATE_CHECKED, true);
-//             vDbBrowsePage(pScreenToBuild->pMainViewContainer);
-//         }
-//     }
-// }
-
-// void gvTestEdit_eventcb(lv_event_t *e)
-// {
-//     lv_event_code_t event = lv_event_get_code(e);
-//     if(event == LV_EVENT_HOVER_OVER)
-//     {
-//         lv_obj_set_style_bg_color(pDbSidebar->pEditButton, SelectedButton, 0);
-//     }
-//     else if(event == LV_EVENT_HOVER_LEAVE)
-//     {
-//         lv_obj_set_style_bg_color(pDbSidebar->pEditButton, Background, 0);
-//     }
-//     else if(event == LV_EVENT_CLICKED)
-//     {
-//         if (lv_obj_has_state(pDbSidebar->pBrowseButton, LV_STATE_CHECKED))
-//         {
-//             lv_obj_set_state(pDbSidebar->pBrowseButton, LV_STATE_CHECKED, false);
-//         }
-
-//         if (!lv_obj_has_state(pDbSidebar->pEditButton, LV_STATE_CHECKED))
-//         {
-//             lv_obj_set_state(pDbSidebar->pEditButton, LV_STATE_CHECKED, true);
-//             //vDbEditPage(pScreenToBuild->pMainViewContainer);
-//         }
-//     }
-// }
