@@ -81,7 +81,6 @@ void gvDbScreenBuild( DbScreen *pScreenToBuild
     pScreenToBuild->pLowerContainer = lv_obj_create(pScreenToBuild->pOverallContainer);
     lv_obj_add_style(pScreenToBuild->pLowerContainer, &gBackgroundFlexRowScreenStyle, 0);
     lv_obj_add_style(pScreenToBuild->pLowerContainer, &gGeneralStyle, 0);
-    lv_obj_set_style_bg_color(pScreenToBuild->pLowerContainer, lv_color_make(0, 255, 0), 0); // temp
     lv_obj_set_size(pScreenToBuild->pLowerContainer, lv_pct(100), lv_pct(88));
     lv_obj_set_style_pad_all(pScreenToBuild->pLowerContainer, 0, 0);
 
@@ -96,7 +95,8 @@ void gvDbScreenBuild( DbScreen *pScreenToBuild
     /* Main View */
     pScreenToBuild->pMainViewContainer = lv_obj_create(pScreenToBuild->pLowerContainer);
     lv_obj_add_style(pScreenToBuild->pMainViewContainer, &gGeneralStyle, 0);
-    lv_obj_set_size(pScreenToBuild->pMainViewContainer, lv_pct(80), lv_pct(100));
+    lv_obj_set_style_pad_all(pScreenToBuild->pMainViewContainer, 0, 0);
+    lv_obj_set_size(pScreenToBuild->pMainViewContainer, lv_pct(85), lv_pct(100));
 
     if (lv_obj_has_state(pScreenToBuild->pSidebar->pBrowseButton, LV_STATE_CHECKED))
     {
@@ -127,7 +127,7 @@ void pSidebarBuild(Sidebar *pSidebarToBuild
     pSidebarToBuild->pSidebarContainer = lv_obj_create(pParent);
     lv_obj_add_style(pSidebarToBuild->pSidebarContainer, &gGeneralStyle, 0);
     lv_obj_add_style(pSidebarToBuild->pSidebarContainer, &gSidebarStyle, 0);
-    lv_obj_set_size(pSidebarToBuild->pSidebarContainer, lv_pct(20), lv_pct(100));
+    lv_obj_set_size(pSidebarToBuild->pSidebarContainer, lv_pct(15), lv_pct(100));
 
     pSidebarToBuild->pBrowseButton = gpSidebarButton(pSidebarToBuild->pSidebarContainer, "Browse");
     lv_obj_add_event_cb(pSidebarToBuild->pBrowseButton, BrowseButtonCallback, LV_EVENT_ALL, pParentScreen);
@@ -142,24 +142,33 @@ void pSidebarBuild(Sidebar *pSidebarToBuild
  *********************/
 void vDbBrowsePage(lv_obj_t *pParent, const char *WindowLabel)
 {
-    
+
 
     lv_obj_t *pBrowseContainer = lv_obj_create(pParent);
     lv_obj_add_style(pBrowseContainer, &gGeneralStyle, 0);
+    lv_obj_set_style_pad_all(pBrowseContainer, 0, 0);
     lv_obj_set_size(pBrowseContainer, lv_pct(100), lv_pct(100));
 
-    CreatureHeader *pTestHeader = gpCreateCreatureHeader( pBrowseContainer
+    lv_obj_t *pHeadersContainer = lv_obj_create(pBrowseContainer);
+    lv_obj_add_style(pHeadersContainer, &gBackgroundFlexColumnScreenStyle, 0);
+    lv_obj_set_style_flex_main_place(pHeadersContainer, LV_FLEX_ALIGN_START, 0);
+    lv_obj_set_style_pad_row(pHeadersContainer, SmallValue, 0);
+    lv_obj_set_size(pHeadersContainer, lv_pct(20), lv_pct(100));
+
+    CreatureHeader *pTestHeader = gpCreateCreatureHeader( pHeadersContainer
                                                         , "Fire Giant"
                                                         , 10
                                                         , "Huge"
                                                         , "Giant"
-                                                        , "Monster Manual" );
+                                                        , "MM" );
 
-    // lv_obj_t *pBrowseLabel = lv_label_create(pBrowseContainer);
-    // lv_label_set_text(pBrowseLabel, WindowLabel);
-    // lv_obj_set_style_text_font(pBrowseLabel, &Metamorphous_24, 0);
-    // lv_obj_set_style_text_color(pBrowseLabel, White, 0);
-    // lv_obj_center(pBrowseLabel);
+    CreatureHeader *pTestHeader2 = gpCreateCreatureHeader( pHeadersContainer
+                                                        , "Frost Giant"
+                                                        , 9
+                                                        , "Huge"
+                                                        , "Giant"
+                                                        , "MM" );
+
 }
 
 void vDbEditPage(lv_obj_t *pParent, const char *WindowLabel)

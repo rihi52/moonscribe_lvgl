@@ -34,6 +34,8 @@
 /*********************
  *      DEFINES
  *********************/
+#define MIN_WINDOW_WIDTH    800
+#define MAIN_WINDOW_HEIGHT   1400
 
 /**********************
  *      TYPEDEFS
@@ -81,7 +83,7 @@ int main(int argc, char *argv[])
     bool simulator_mode = false;
     lv_display_t* display = lv_windows_create_display(
         L"LVGL Display Window",
-        800, 560,
+        MIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT,
         zoom_level, allow_dpi_override, simulator_mode);
     if (!display) return -1;
     lv_lock();

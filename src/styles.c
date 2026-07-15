@@ -13,10 +13,11 @@ lv_color_t SelectedButton;
 lv_color_t White;
 
 /* Standard values for styling */
-static uint16_t NoValue        = 0;
-static uint16_t SmallValue     = 8;
-static uint16_t MediumValue    = 16;
-static uint16_t LargeValue     = 24;
+uint16_t NoValue        = 0;
+uint16_t SmallValue     = 8;
+uint16_t MediumValue    = 16;
+uint16_t LargeValue     = 24;
+uint16_t sBorderWidth   = 1;
 
 /* Booleans */
 static bool inited = false;
@@ -103,6 +104,8 @@ void gvStylesInit(void){
         lv_style_set_flex_cross_place(&gHeaderRowStyle, LV_FLEX_ALIGN_CENTER);
         lv_style_set_flex_track_place(&gHeaderRowStyle, LV_FLEX_ALIGN_CENTER);
         lv_style_set_pad_column(&gHeaderRowStyle, SmallValue);
+        lv_style_set_pad_ver(&gHeaderRowStyle, NoValue);
+        lv_style_set_border_width(&gHeaderRowStyle, NoValue);
 
         /* Common flex column style */
         lv_style_set_flex_flow(&gBackgroundFlexColumnScreenStyle, LV_FLEX_FLOW_COLUMN);
@@ -137,7 +140,7 @@ void gvStylesInit(void){
         lv_style_set_bg_opa(&gSidebarSelectedButtonStyle, LV_OPA_COVER);
         lv_style_set_radius(&gSidebarSelectedButtonStyle, MediumValue);
         lv_style_set_margin_ver(&gSidebarSelectedButtonStyle, SmallValue);
-        lv_style_set_border_width(&gSidebarSelectedButtonStyle, 1);
+        lv_style_set_border_width(&gSidebarSelectedButtonStyle, sBorderWidth);
         lv_style_set_border_color(&gSidebarSelectedButtonStyle, White);
 
         inited = true;

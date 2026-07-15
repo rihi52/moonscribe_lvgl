@@ -11,6 +11,13 @@ extern lv_color_t Primary;
 extern lv_color_t SelectedButton;
 extern lv_color_t White;
 
+/* Values */
+extern uint16_t NoValue;
+extern uint16_t SmallValue;
+extern uint16_t MediumValue;
+extern uint16_t LargeValue;
+extern uint16_t sBorderWidth;
+
 /* Styles */
 extern lv_style_t gHeaderStyle;
 extern lv_style_t gSidebarStyle;
