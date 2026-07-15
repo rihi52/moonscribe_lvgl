@@ -3,6 +3,7 @@
 #include "db_screen.h"
 #include "../styles.h"
 #include "../components/buttons.h"
+#include "../components/creature_header.h"
 
 /*********************
  *  Local Variables
@@ -141,15 +142,24 @@ void pSidebarBuild(Sidebar *pSidebarToBuild
  *********************/
 void vDbBrowsePage(lv_obj_t *pParent, const char *WindowLabel)
 {
+    
+
     lv_obj_t *pBrowseContainer = lv_obj_create(pParent);
     lv_obj_add_style(pBrowseContainer, &gGeneralStyle, 0);
     lv_obj_set_size(pBrowseContainer, lv_pct(100), lv_pct(100));
 
-    lv_obj_t *pBrowseLabel = lv_label_create(pBrowseContainer);
-    lv_label_set_text(pBrowseLabel, WindowLabel);
-    lv_obj_set_style_text_font(pBrowseLabel, &Metamorphous_24, 0);
-    lv_obj_set_style_text_color(pBrowseLabel, White, 0);
-    lv_obj_center(pBrowseLabel);
+    CreatureHeader *pTestHeader = gpCreateCreatureHeader( pBrowseContainer
+                                                        , "Fire Giant"
+                                                        , 10
+                                                        , "Huge"
+                                                        , "Giant"
+                                                        , "Monster Manual" );
+
+    // lv_obj_t *pBrowseLabel = lv_label_create(pBrowseContainer);
+    // lv_label_set_text(pBrowseLabel, WindowLabel);
+    // lv_obj_set_style_text_font(pBrowseLabel, &Metamorphous_24, 0);
+    // lv_obj_set_style_text_color(pBrowseLabel, White, 0);
+    // lv_obj_center(pBrowseLabel);
 }
 
 void vDbEditPage(lv_obj_t *pParent, const char *WindowLabel)

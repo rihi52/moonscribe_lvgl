@@ -27,6 +27,7 @@ static bool inited = false;
 /* Styles */
 lv_style_t gHeaderStyle;
 lv_style_t gSidebarStyle;
+lv_style_t gHeaderRowStyle;
 
 /* Screens */
 lv_style_t gBackgroundFlexColumnScreenStyle;
@@ -56,6 +57,7 @@ void gvStylesInit(void){
         /* Initialize styles */
         lv_style_init(&gHeaderStyle);
         lv_style_init(&gSidebarStyle);
+        lv_style_init(&gHeaderRowStyle);
         lv_style_init(&gBackgroundFlexColumnScreenStyle);
         lv_style_init(&gBackgroundFlexRowScreenStyle);
         lv_style_init(&gHomeScreenButtonStyle);
@@ -93,13 +95,23 @@ void gvStylesInit(void){
         lv_style_set_pad_hor(&gSidebarStyle, SmallValue);
         lv_style_set_pad_row(&gSidebarStyle, NoValue);
 
+        /* Row style for creature headers */
+        lv_style_set_flex_flow(&gHeaderRowStyle, LV_FLEX_FLOW_ROW);
+        lv_style_set_bg_color(&gHeaderRowStyle, Background);
+        lv_style_set_layout(&gHeaderRowStyle, LV_LAYOUT_FLEX);
+        lv_style_set_flex_main_place(&gHeaderRowStyle, LV_FLEX_ALIGN_SPACE_BETWEEN);
+        lv_style_set_flex_cross_place(&gHeaderRowStyle, LV_FLEX_ALIGN_CENTER);
+        lv_style_set_flex_track_place(&gHeaderRowStyle, LV_FLEX_ALIGN_CENTER);
+        lv_style_set_pad_column(&gHeaderRowStyle, SmallValue);
+
         /* Common flex column style */
         lv_style_set_flex_flow(&gBackgroundFlexColumnScreenStyle, LV_FLEX_FLOW_COLUMN);
+        lv_style_set_bg_color(&gBackgroundFlexColumnScreenStyle, Background);
         lv_style_set_layout(&gBackgroundFlexColumnScreenStyle, LV_LAYOUT_FLEX);
         lv_style_set_flex_main_place(&gBackgroundFlexColumnScreenStyle, LV_FLEX_ALIGN_CENTER);
         lv_style_set_flex_cross_place(&gBackgroundFlexColumnScreenStyle, LV_FLEX_ALIGN_CENTER);
         lv_style_set_flex_track_place(&gBackgroundFlexColumnScreenStyle, LV_FLEX_ALIGN_CENTER);
-        lv_style_set_pad_row(&gBackgroundFlexColumnScreenStyle, 0);
+        lv_style_set_pad_row(&gBackgroundFlexColumnScreenStyle, NoValue);
 
         /* Common flex row style */
         lv_style_set_flex_flow(&gBackgroundFlexRowScreenStyle, LV_FLEX_FLOW_ROW);
@@ -107,7 +119,7 @@ void gvStylesInit(void){
         lv_style_set_flex_main_place(&gBackgroundFlexRowScreenStyle, LV_FLEX_ALIGN_START);
         lv_style_set_flex_cross_place(&gBackgroundFlexRowScreenStyle, LV_FLEX_ALIGN_CENTER);
         lv_style_set_flex_track_place(&gBackgroundFlexRowScreenStyle, LV_FLEX_ALIGN_CENTER);
-        lv_style_set_pad_column(&gBackgroundFlexRowScreenStyle, 0);
+        lv_style_set_pad_column(&gBackgroundFlexRowScreenStyle, NoValue);
 
         /* Button styles */
         lv_style_set_bg_color(&gHomeScreenButtonStyle, Primary);
