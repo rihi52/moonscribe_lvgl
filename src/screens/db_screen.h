@@ -10,7 +10,7 @@ typedef struct
 {
     lv_obj_t *pSidebarContainer;
     lv_obj_t *pBrowseButton;
-    lv_obj_t *pEditButton;
+    lv_obj_t *pCreateButton;
 } Sidebar;
 
 typedef struct
@@ -43,4 +43,4 @@ void pSidebarBuild(Sidebar *pSidebarToBuild
                   , lv_event_cb_t BrowseButtonCallback
                   , lv_event_cb_t EditButtonCallback );
 
-#endif  /* PLAYERS_SCREEN_H */
+#endif  /* DB_SCREEN_H */

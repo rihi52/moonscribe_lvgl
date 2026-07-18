@@ -80,7 +80,8 @@ void gvStylesInit(void){
         lv_style_set_flex_main_place(&gHeaderStyle, LV_FLEX_ALIGN_START);
         lv_style_set_flex_cross_place(&gHeaderStyle, LV_FLEX_ALIGN_CENTER);
         lv_style_set_flex_track_place(&gHeaderStyle, LV_FLEX_ALIGN_CENTER);
-        lv_style_set_pad_all(&gHeaderStyle, SmallValue);
+        lv_style_set_pad_hor(&gHeaderStyle, SmallValue);
+        lv_style_set_pad_ver(&gHeaderStyle, SmallValue / 2);
         lv_style_set_pad_column(&gHeaderStyle, NoValue);
 
         /* Sidebar Style */

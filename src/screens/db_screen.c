@@ -102,7 +102,7 @@ void gvDbScreenBuild( DbScreen *pScreenToBuild
     {
         vDbBrowsePage(pScreenToBuild->pMainViewContainer, WindowLabel);
     }
-    else if(lv_obj_has_state(pScreenToBuild->pSidebar->pEditButton, LV_STATE_CHECKED))
+    else if(lv_obj_has_state(pScreenToBuild->pSidebar->pCreateButton, LV_STATE_CHECKED))
     {
         vDbEditPage(pScreenToBuild->pMainViewContainer, WindowLabel);
     }
@@ -113,7 +113,7 @@ void gvDbScreenBuild( DbScreen *pScreenToBuild
 void SidebarInit(Sidebar *pSidebarToInit)
 {
     pSidebarToInit->pBrowseButton = NULL;
-    pSidebarToInit->pEditButton = NULL;
+    pSidebarToInit->pCreateButton = NULL;
     pSidebarToInit->pSidebarContainer = NULL;
 }
 
@@ -132,8 +132,8 @@ void pSidebarBuild(Sidebar *pSidebarToBuild
     pSidebarToBuild->pBrowseButton = gpSidebarButton(pSidebarToBuild->pSidebarContainer, "Browse");
     lv_obj_add_event_cb(pSidebarToBuild->pBrowseButton, BrowseButtonCallback, LV_EVENT_ALL, pParentScreen);
 
-    pSidebarToBuild->pEditButton = gpSidebarButton(pSidebarToBuild->pSidebarContainer, "Edit");
-    lv_obj_add_event_cb(pSidebarToBuild->pEditButton, EditButtonCallback, LV_EVENT_ALL, pParentScreen);
+    pSidebarToBuild->pCreateButton = gpSidebarButton(pSidebarToBuild->pSidebarContainer, "Create");
+    lv_obj_add_event_cb(pSidebarToBuild->pCreateButton, EditButtonCallback, LV_EVENT_ALL, pParentScreen);
 }
 
 

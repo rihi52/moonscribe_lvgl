@@ -34,8 +34,8 @@
 /*********************
  *      DEFINES
  *********************/
-#define MIN_WINDOW_WIDTH    800
-#define MAIN_WINDOW_HEIGHT   1400
+#define MIN_WINDOW_WIDTH    1400
+#define MAIN_WINDOW_HEIGHT  800
 
 /**********************
  *      TYPEDEFS
@@ -51,6 +51,7 @@ static void gvActivatePlayersScreen_eventcb(lv_event_t *e);
 static void gvActivateHomeScreen_eventcb(lv_event_t *e);
 static void gvTestBrowse_eventcb(lv_event_t *e);
 static void gvTestEdit_eventcb(lv_event_t *e);
+static void vCleanUp();
 
 /**********************
  *  STATIC VARIABLES
@@ -76,6 +77,8 @@ int main(int argc, char *argv[])
 {
     (void)argc;
     (void)argv;
+
+    atexit(vCleanUp);
 
     lv_init();
     int32_t zoom_level = 100;
@@ -128,6 +131,11 @@ int main(int argc, char *argv[])
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+static void vCleanUp()
+{
+
+}
+
 static void gvActivateEncountersScreen_eventcb(lv_event_t *e)
 {
     lv_event_code_t event = lv_event_get_code(e);
@@ -196,9 +204,9 @@ static void gvTestBrowse_eventcb(lv_event_t *e)
     }
     else if(event == LV_EVENT_CLICKED)
     {
-        if (lv_obj_has_state(pEventScreen->pSidebar->pEditButton, LV_STATE_CHECKED))
+        if (lv_obj_has_state(pEventScreen->pSidebar->pCreateButton, LV_STATE_CHECKED))
         {
-            lv_obj_set_state(pEventScreen->pSidebar->pEditButton, LV_STATE_CHECKED, false);
+            lv_obj_set_state(pEventScreen->pSidebar->pCreateButton, LV_STATE_CHECKED, false);
         }
         else
         {
@@ -226,11 +234,11 @@ static void gvTestEdit_eventcb(lv_event_t *e)
 
     if(event == LV_EVENT_HOVER_OVER)
     {
-        lv_obj_set_style_bg_color(pEventScreen->pSidebar->pEditButton, SelectedButton, 0);
+        lv_obj_set_style_bg_color(pEventScreen->pSidebar->pCreateButton, SelectedButton, 0);
     }
     else if(event == LV_EVENT_HOVER_LEAVE)
     {
-        lv_obj_set_style_bg_color(pEventScreen->pSidebar->pEditButton, Background, 0);
+        lv_obj_set_style_bg_color(pEventScreen->pSidebar->pCreateButton, Background, 0);
     }
     else if(event == LV_EVENT_CLICKED)
     {
@@ -239,9 +247,9 @@ static void gvTestEdit_eventcb(lv_event_t *e)
             lv_obj_set_state(pEventScreen->pSidebar->pBrowseButton, LV_STATE_CHECKED, false);
         }
 
-        if (!lv_obj_has_state(pEventScreen->pSidebar->pEditButton, LV_STATE_CHECKED))
+        if (!lv_obj_has_state(pEventScreen->pSidebar->pCreateButton, LV_STATE_CHECKED))
         {
-            lv_obj_set_state(pEventScreen->pSidebar->pEditButton, LV_STATE_CHECKED, true);
+            lv_obj_set_state(pEventScreen->pSidebar->pCreateButton, LV_STATE_CHECKED, true);
             vDbEditPage(pEventScreen->pMainViewContainer, "New again");
         }
     }
