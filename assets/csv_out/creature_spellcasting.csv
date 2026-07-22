@@ -1,0 +1,37 @@
+id,creature_id,name,header_text,ability
+1,2,Spellcasting,"The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:",wis
+2,24,Spellcasting,"The sphinx is a 12th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 18, +10 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following cleric spells prepared:",wis
+3,28,Spellcasting,"The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:",int
+4,66,Innate Spellcasting,"The giant's innate spellcasting ability is Charisma. It can innately cast the following spells, requiring no material components:",cha
+5,71,Innate Spellcasting,"The couatl's spellcasting ability is Charisma (spell save DC 14). It can innately cast the following spells, requiring only verbal components:",cha
+6,74,Spellcasting,"The fanatic is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The fanatic has the following cleric spells prepared:",wis
+7,78,Innate Spellcasting,"The gnome's innate spellcasting ability is Intelligence (spell save DC 11). It can innately cast the following spells, requiring no material components:",int
+8,80,Innate Spellcasting,"The deva's spellcasting ability is Charisma (spell save DC 17). The deva can innately cast the following spells, requiring only verbal components:",cha
+9,82,Innate Spellcasting,"The djinni's innate spellcasting ability is Charisma (spell save DC 17, +9 to hit with spell attacks). It can innately cast the following spells, requiring no material components:",cha
+10,87,Innate Spellcasting,"The drider's innate spellcasting ability is Wisdom (spell save DC 13). The drider can innately cast the following spells, requiring no material components:",wis
+11,88,Innate Spellcasting,"The drow's spellcasting ability is Charisma (spell save DC 11). It can innately cast the following spells, requiring no material components:",cha
+12,89,Spellcasting,"The druid is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). It has the following druid spells prepared:",wis
+13,90,Innate Spellcasting,"The dryad's innate spellcasting ability is Charisma (spell save DC 14). The dryad can innately cast the following spells, requiring no material components:",cha
+14,92,Innate Spellcasting (1/Day),"The mephit can innately cast sleep, requiring no material components. Its innate spellcasting ability is Charisma.",cha
+15,95,Innate Spellcasting,"The efreeti's innate spellcasting ability is Charisma (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no material components:",cha
+16,142,Innate Spellcasting,"The glabrezu's spellcasting ability is Intelligence (spell save DC 16). The glabrezu can innately cast the following spells, requiring no material components:",int
+17,151,Innate Spellcasting,"The hag's innate spellcasting ability is Charisma (spell save DC 12). She can innately cast the following spells, requiring no material components:",cha
+18,156,Spellcasting,"The naga is an 11th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following cleric spells prepared:",wis
+19,157,Spellcasting,"The sphinx is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following wizard spells prepared:",int
+20,172,Innate Spellcasting (1/Day),"The mephit can innately cast fog cloud, requiring no material components. Its innate spellcasting ability is Charisma.",cha
+21,181,Innate Spellcasting,"The lamia's innate spellcasting ability is Charisma (spell save DC 13). It can innately cast the following spells, requiring no material components.",cha
+22,183,Spellcasting,"The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:",int
+23,187,Spellcasting,"The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared:",int
+24,188,Innate Spellcasting (1/Day),"The mephit can innately cast heat metal (spell save DC 10), requiring no material components. Its innate spellcasting ability is Charisma.",cha
+25,202,Spellcasting,"The mummy lord is a 10th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks). The mummy lord has the following cleric spells prepared:",wis
+26,204,Innate Spellcasting,"The hag's innate spellcasting ability is Charisma (spell save DC 14, +6 to hit with spell attacks). She can innately cast the following spells, requiring no material components:",cha
+27,211,Innate Spellcasting,"The oni's innate spellcasting ability is Charisma (spell save DC 13). The oni can innately cast the following spells, requiring no material components:",cha
+28,219,Innate Spellcasting,"The pit fiend's spellcasting ability is Charisma (spell save DC 21). The pit fiend can innately cast the following spells, requiring no material components:",cha
+29,220,Innate Spellcasting,"The planetar's spellcasting ability is Charisma (spell save DC 20). The planetar can innately cast the following spells, requiring no material components:",cha
+30,225,Spellcasting,"The priest is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 13, +5 to hit with spell attacks). The priest has the following cleric spells prepared:",wis
+31,230,Innate Spellcasting,"The rakshasa's innate spellcasting ability is Charisma (spell save DC 18, +10 to hit with spell attacks). The rakshasa can innately cast the following spells, requiring no material components:",cha
+32,256,Innate Spellcasting,"The solar's spellcasting ability is Charisma (spell save DC 25). It can innately cast the following spells, requiring no material components:",cha
+33,259,Spellcasting,"The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:",int
+34,262,Innate Spellcasting (1/Day),"The mephit can innately cast blur, requiring no material components. Its innate spellcasting ability is Charisma.",cha
+35,266,Innate Spellcasting,"The giant's innate spellcasting ability is Charisma (spell save DC 17). It can innately cast the following spells, requiring no material components:",cha
+36,285,Innate Spellcasting,"The unicorn's innate spellcasting ability is Charisma (spell save DC 14). The unicorn can innately cast the following spells, requiring no components:",cha

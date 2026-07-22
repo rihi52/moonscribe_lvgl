@@ -1,0 +1,315 @@
+id,name,source,size,type,type_tags,alignment,ac,ac_from,hp_average,hp_formula,speed_walk,speed_fly,speed_swim,speed_climb,speed_burrow,str,dex,con,int,wis,cha,passive_perception,cr
+1,Aboleth,,L,aberration,,LE,17,natural armor,135,18d10 + 36,10,,40,,,21,9,15,18,15,18,20,10
+2,Acolyte,,M,humanoid,any race,A,10,,9,2d8,30,,,,,10,10,10,10,14,11,12,1/4
+3,Adult Black Dragon,,H,dragon,,CE,19,natural armor,195,17d12 + 85,40,80,40,,,23,14,21,14,13,17,21,14
+4,Adult Blue Dragon,,H,dragon,,LE,19,natural armor,225,18d12 + 108,40,80,,,30,25,10,23,16,15,19,22,16
+5,Adult Brass Dragon,,H,dragon,,CG,18,natural armor,172,15d12 + 75,40,80,,,40,23,10,21,14,13,17,21,13
+6,Adult Bronze Dragon,,H,dragon,,LG,19,natural armor,212,17d12 + 102,40,80,40,,,25,10,23,16,15,19,22,15
+7,Adult Copper Dragon,,H,dragon,,CG,18,natural armor,184,16d12 + 80,40,80,,40,,23,12,21,18,15,17,22,14
+8,Adult Gold Dragon,,H,dragon,,LG,19,natural armor,256,19d12 + 133,40,80,40,,,27,14,25,16,15,24,24,17
+9,Adult Green Dragon,,H,dragon,,LE,19,natural armor,207,18d12 + 90,40,80,40,,,23,12,21,18,15,17,22,15
+10,Adult Red Dragon,,H,dragon,,CE,19,natural armor,256,19d12 + 133,40,80,,40,,27,10,25,16,13,21,23,17
+11,Adult Silver Dragon,,H,dragon,,LG,19,natural armor,243,18d12 + 126,40,80,,,,27,10,25,16,13,21,21,16
+12,Adult White Dragon,,H,dragon,,CE,18,natural armor,200,16d12 + 96,40,80,40,,30,22,10,22,8,12,12,21,13
+13,Air Elemental,,L,elemental,,N,15,,90,12d10 + 24,,"{'number': 90, 'condition': '(hover)'}",,,,14,20,14,6,10,6,10,5
+14,Ancient Black Dragon,,G,dragon,,CE,22,natural armor,367,21d20 + 147,40,80,40,,,27,14,25,16,15,19,26,21
+15,Ancient Blue Dragon,,G,dragon,,LE,22,natural armor,481,26d20 + 208,40,80,,,40,29,10,27,18,17,21,27,23
+16,Ancient Brass Dragon,,G,dragon,,CG,20,natural armor,297,17d20 + 119,40,80,,,40,27,10,25,16,15,19,24,20
+17,Ancient Bronze Dragon,,G,dragon,,LG,22,natural armor,444,24d20 + 192,40,80,40,,,29,10,27,18,17,21,27,22
+18,Ancient Copper Dragon,,G,dragon,,CG,21,natural armor,350,20d20 + 140,40,80,,40,,27,12,25,20,17,19,27,21
+19,Ancient Gold Dragon,,G,dragon,,LG,22,natural armor,546,28d20 + 252,40,80,40,,,30,14,29,18,17,28,27,24
+20,Ancient Green Dragon,,G,dragon,,LE,21,natural armor,385,22d20 + 154,40,80,40,,,27,12,25,20,17,19,27,22
+21,Ancient Red Dragon,,G,dragon,,CE,22,natural armor,546,28d20 + 252,40,80,,40,,30,10,29,18,15,23,26,24
+22,Ancient Silver Dragon,,G,dragon,,LG,22,natural armor,487,25d20 + 225,40,80,,,,30,10,29,18,15,23,26,23
+23,Ancient White Dragon,,G,dragon,,CE,20,natural armor,333,18d20 + 144,40,80,40,,40,26,10,26,10,13,14,23,20
+24,Androsphinx,,L,monstrosity,,LN,17,natural armor,199,19d10 + 95,40,60,,,,22,10,20,16,18,23,20,17
+25,Animated Armor,,M,construct,,U,18,natural armor,33,6d8 + 6,25,,,,,14,11,13,1,3,1,6,1
+26,Ankheg,,L,monstrosity,,U,14,natural armor,39,6d10 + 6,30,,,,10,17,11,13,1,13,6,11,2
+27,Ape,,M,beast,,U,12,,19,3d8 + 6,30,,,30,,16,14,14,6,12,7,13,1/2
+28,Archmage,,M,humanoid,any race,A,12,,99,18d8 + 18,30,,,,,10,14,12,20,15,16,12,12
+29,Assassin,,M,humanoid,any race,LNXCNYE,15,{@item studded leather armor|phb|studded leather},78,12d8 + 24,30,,,,,11,16,14,13,11,10,13,8
+30,Awakened Shrub,,S,plant,,U,9,,10,3d6,20,,,,,3,8,11,10,10,6,10,0
+31,Awakened Tree,,H,plant,,U,13,natural armor,59,7d12 + 14,20,,,,,19,6,15,10,10,7,10,2
+32,Axe Beak,,L,beast,,U,11,,19,3d10 + 3,50,,,,,14,12,12,2,10,5,10,1/4
+33,Azer,,M,elemental,,LN,17,"natural armor, {@item shield|phb}",39,6d8 + 12,30,,,,,17,12,15,12,13,10,11,2
+34,Baboon,,S,beast,,U,12,,3,1d6,30,,,30,,8,14,11,4,12,6,11,0
+35,Badger,,T,beast,,U,10,,3,1d4 + 1,20,,,,5,4,11,12,2,12,5,11,0
+36,Balor,,H,fiend,demon,CE,19,natural armor,262,21d12 + 126,40,80,,,,26,15,22,20,16,22,13,19
+37,Bandit,,M,humanoid,any race,NXCGNYE,12,{@item leather armor|phb},11,2d8 + 2,30,,,,,11,12,12,10,10,10,10,1/8
+38,Bandit Captain,,M,humanoid,any race,NXCGNYE,15,{@item studded leather armor|phb|studded leather},65,10d8 + 20,30,,,,,15,16,14,14,11,14,10,2
+39,Barbed Devil,,M,fiend,devil,LE,15,natural armor,110,13d8 + 52,30,,,,,16,17,18,12,14,14,18,5
+40,Basilisk,,M,monstrosity,,U,15,natural armor,52,8d8 + 16,20,,,,,16,8,15,2,8,7,9,3
+41,Bat,,T,beast,,U,12,,1,1d4 - 1,5,30,,,,2,15,8,2,12,4,11,0
+42,Bearded Devil,,M,fiend,devil,LE,13,natural armor,52,8d8 + 16,30,,,,,16,15,15,9,11,11,10,3
+43,Behir,,H,monstrosity,,NE,17,natural armor,168,16d12 + 64,50,,,40,,23,16,18,7,14,12,16,11
+44,Berserker,,M,humanoid,any race,CGNYE,13,{@item hide armor|phb},67,9d8 + 27,30,,,,,16,12,17,9,11,9,10,2
+45,Black Bear,,M,beast,,U,11,natural armor,19,3d8 + 6,40,,,30,,15,10,14,2,12,7,13,1/2
+46,Black Dragon Wyrmling,,M,dragon,,CE,17,natural armor,33,6d8 + 6,30,60,30,,,15,14,13,10,11,13,14,2
+47,Black Pudding,,L,ooze,,U,7,,85,10d10 + 30,20,,,20,,16,5,16,1,6,1,8,4
+48,Blink Dog,,M,fey,,LG,13,,22,4d8 + 4,40,,,,,12,17,12,10,13,11,13,1/4
+49,Blood Hawk,,S,beast,,U,12,,7,2d6,10,60,,,,6,14,10,3,14,5,14,1/8
+50,Blue Dragon Wyrmling,,M,dragon,,LE,17,natural armor,52,8d8 + 16,30,60,,,15,17,10,15,12,11,15,14,3
+51,Boar,,M,beast,,U,11,natural armor,11,2d8 + 2,40,,,,,13,11,12,2,9,5,9,1/4
+52,Bone Devil,,L,fiend,devil,LE,19,natural armor,142,15d10 + 60,40,40,,,,18,16,18,13,14,16,12,9
+53,Brass Dragon Wyrmling,,M,dragon,,CG,16,natural armor,16,3d8 + 3,30,60,,,15,15,10,13,10,11,13,14,1
+54,Bronze Dragon Wyrmling,,M,dragon,,LG,17,natural armor,32,5d8 + 10,30,60,30,,,17,10,15,12,11,15,14,2
+55,Brown Bear,,L,beast,,U,11,natural armor,34,4d10 + 12,40,,,30,,19,10,16,2,13,7,13,1
+56,Bugbear,,M,humanoid,goblinoid,CE,16,"{@item hide armor|phb}, {@item shield|phb}",27,5d8 + 5,30,,,,,15,14,13,8,11,9,10,1
+57,Bulette,,L,monstrosity,,U,17,natural armor,94,9d10 + 45,40,,,,40,19,11,21,2,10,5,16,5
+58,Camel,,L,beast,,U,9,,15,2d10 + 4,50,,,,,16,8,14,2,8,5,9,1/8
+59,Cat,,T,beast,,U,12,,2,1d4,40,,,30,,3,15,10,3,12,7,13,0
+60,Centaur,,L,monstrosity,,NG,12,,45,6d10 + 12,50,,,,,18,14,14,9,13,11,13,2
+61,Chain Devil,,M,fiend,devil,LE,16,natural armor,85,10d8 + 40,30,,,,,18,15,18,11,12,14,11,8
+62,Chimera,,L,monstrosity,,CE,14,natural armor,114,12d10 + 48,30,60,,,,19,11,19,3,14,10,18,6
+63,Chuul,,L,aberration,,CE,16,natural armor,93,11d10 + 33,30,,30,,,19,10,16,5,11,5,14,4
+64,Clay Golem,,L,construct,,U,14,natural armor,133,14d10 + 56,20,,,,,20,9,18,3,8,1,9,9
+65,Cloaker,,L,aberration,,CN,14,natural armor,78,12d10 + 12,10,40,,,,17,15,12,13,12,14,11,8
+66,Cloud Giant,,H,giant,,NG (50%) or NE (50%),14,natural armor,200,16d12 + 96,40,,,,,27,10,22,12,16,16,17,9
+67,Cockatrice,,S,monstrosity,,U,11,,27,6d6 + 6,20,40,,,,6,12,12,2,13,5,11,1/2
+68,Commoner,,M,humanoid,any race,A,10,,4,1d8,30,,,,,10,10,10,10,10,10,10,0
+69,Constrictor Snake,,L,beast,,U,12,,13,2d10 + 2,30,,30,,,15,14,12,1,10,3,10,1/4
+70,Copper Dragon Wyrmling,,M,dragon,,CG,16,natural armor,22,4d8 + 4,30,60,,30,,15,12,13,14,11,13,14,1
+71,Couatl,,M,celestial,,LG,19,natural armor,97,13d8 + 39,30,90,,,,16,20,17,18,20,18,15,4
+72,Crab,,T,beast,,U,11,natural armor,2,1d4,20,,20,,,2,11,10,1,8,2,9,0
+73,Crocodile,,L,beast,,U,12,natural armor,19,3d10 + 3,20,,30,,,15,10,13,2,10,5,10,1/2
+74,Cult Fanatic,,M,humanoid,any race,LNXCNYE,13,{@item leather armor|phb},33,6d8 + 6,30,,,,,11,14,12,10,13,14,11,2
+75,Cultist,,M,humanoid,any race,LNXCNYE,12,{@item leather armor|phb},9,2d8,30,,,,,11,12,10,10,11,10,10,1/8
+76,Darkmantle,,S,monstrosity,,U,11,,22,5d6 + 5,10,30,,,,16,12,13,2,10,5,10,1/2
+77,Death Dog,,M,monstrosity,,NE,12,,39,6d8 + 12,40,,,,,15,14,14,3,13,6,15,1
+78,Deep Gnome (Svirfneblin),,S,humanoid,gnome,NG,15,{@item chain shirt|phb},16,3d6 + 6,20,,,,,15,14,14,12,10,9,12,1/2
+79,Deer,,M,beast,,U,13,,4,1d8,50,,,,,11,16,11,2,14,5,12,0
+80,Deva,,M,celestial,,LG,17,natural armor,136,16d8 + 64,30,90,,,,18,18,18,17,20,20,19,10
+81,Dire Wolf,,L,beast,,U,14,natural armor,37,5d10 + 10,50,,,,,17,15,15,3,12,7,13,1
+82,Djinni,,L,elemental,,CG,17,natural armor,161,14d10 + 84,30,90,,,,21,15,22,15,16,20,13,11
+83,Doppelganger,,M,monstrosity,shapechanger,N,14,,52,8d8 + 16,30,,,,,11,18,14,11,12,14,11,3
+84,Draft Horse,,L,beast,,U,10,,19,3d10 + 3,40,,,,,18,10,12,2,11,7,10,1/4
+85,Dragon Turtle,,G,dragon,,N,20,natural armor,341,22d20 + 110,20,,40,,,25,10,20,10,12,12,11,17
+86,Dretch,,S,fiend,demon,CE,11,natural armor,18,4d6 + 4,20,,,,,11,11,12,5,8,3,9,1/4
+87,Drider,,L,monstrosity,,CE,19,natural armor,123,13d10 + 52,30,,,30,,16,16,18,13,14,12,15,6
+88,Drow,,M,humanoid,Drow elf,NE,15,{@item chain shirt|phb},13,3d8,30,,,,,10,14,10,11,11,12,12,1/4
+89,Druid,,M,humanoid,any race,A,11,,27,5d8 + 5,30,,,,,10,12,13,12,15,11,14,2
+90,Dryad,,M,fey,,N,11,,22,5d8,30,,,,,10,12,11,14,15,18,14,1
+91,Duergar,,M,humanoid,dwarf,LE,16,"{@item scale mail|phb}, {@item shield|phb}",26,4d8 + 4,25,,,,,14,11,14,11,10,9,10,1
+92,Dust Mephit,,S,elemental,,NE,12,,17,5d6,30,30,,,,5,14,10,9,11,10,12,1/2
+93,Eagle,,S,beast,,U,12,,3,1d6,10,60,,,,6,15,10,2,14,7,14,0
+94,Earth Elemental,,L,elemental,,N,17,natural armor,126,12d10 + 60,30,,,,30,20,8,20,5,10,5,10,5
+95,Efreeti,,L,elemental,,LE,17,natural armor,200,16d10 + 112,40,60,,,,22,12,24,16,15,16,12,11
+96,Elephant,,H,beast,,U,12,natural armor,76,8d12 + 24,40,,,,,22,9,17,3,11,6,10,4
+97,Elk,,L,beast,,U,10,,13,2d10 + 2,50,,,,,16,10,12,2,10,6,10,1/4
+98,Erinyes,,M,fiend,devil,LE,18,{@item plate armor|phb},153,18d8 + 72,30,60,,,,18,16,18,14,14,18,12,12
+99,Ettercap,,M,monstrosity,,NE,13,natural armor,44,8d8 + 8,30,,,30,,14,15,13,7,12,8,13,2
+100,Ettin,,L,giant,,CE,12,natural armor,85,10d10 + 30,40,,,,,21,8,17,6,10,8,14,4
+101,Fire Elemental,,L,elemental,,N,13,,102,12d10 + 36,50,,,,,10,17,16,6,10,7,10,5
+102,Fire Giant,,H,giant,,LE,18,{@item plate armor|phb},162,13d12 + 78,30,,,,,25,9,23,10,14,13,16,9
+103,Flesh Golem,,M,construct,,N,9,,93,11d8 + 44,30,,,,,19,9,18,6,10,5,10,5
+104,Flying Snake,,T,beast,,U,14,,5,2d4,30,60,30,,,4,18,11,2,12,5,11,1/8
+105,Flying Sword,,S,construct,,U,17,natural armor,17,5d6,0,"{'number': 50, 'condition': '(hover)'}",,,,12,15,11,1,5,1,7,1/4
+106,Frog,,T,beast,,U,11,,1,1d4 - 1,20,,20,,,1,13,8,1,8,3,11,0
+107,Frost Giant,,H,giant,,NE,15,patchwork armor,138,12d12 + 60,40,,,,,23,9,21,9,10,12,13,8
+108,Gargoyle,,M,elemental,,CE,15,natural armor,52,7d8 + 21,30,60,,,,15,11,16,6,11,7,10,2
+109,Gelatinous Cube,,L,ooze,,U,6,,84,8d10 + 40,15,,,,,14,3,20,1,6,1,8,2
+110,Ghast,,M,undead,,CE,13,,36,8d8,30,,,,,16,17,10,11,10,8,10,2
+111,Ghost,,M,undead,,A,11,,45,10d8,0,"{'number': 40, 'condition': '(hover)'}",,,,7,13,10,10,12,17,11,4
+112,Ghoul,,M,undead,,CE,12,,22,5d8,30,,,,,13,15,10,7,10,6,10,1
+113,Giant Ape,,H,beast,,U,12,,157,15d12 + 60,40,,,40,,23,14,18,7,12,7,14,7
+114,Giant Badger,,M,beast,,U,10,,13,2d8 + 4,30,,,,10,13,10,15,2,12,5,11,1/4
+115,Giant Bat,,L,beast,,U,13,,22,4d10,10,60,,,,15,16,11,2,12,6,11,1/4
+116,Giant Boar,,L,beast,,U,12,natural armor,42,5d10 + 15,40,,,,,17,10,16,2,7,5,8,2
+117,Giant Centipede,,S,beast,,U,13,natural armor,4,1d6 + 1,30,,,30,,5,14,12,1,7,3,8,1/4
+118,Giant Constrictor Snake,,H,beast,,U,12,,60,8d12 + 8,30,,30,,,19,14,12,1,10,3,12,2
+119,Giant Crab,,M,beast,,U,15,natural armor,13,3d8,30,,30,,,13,15,11,1,9,3,9,1/8
+120,Giant Crocodile,,H,beast,,U,14,natural armor,85,9d12 + 27,30,,50,,,21,9,17,2,10,7,10,5
+121,Giant Eagle,,L,beast,,NG,13,,26,4d10 + 4,10,80,,,,16,17,13,8,14,10,14,1
+122,Giant Elk,,H,beast,,U,14,natural armor,42,5d12 + 10,60,,,,,19,16,14,7,14,10,14,2
+123,Giant Fire Beetle,,S,beast,,U,13,natural armor,4,1d6 + 1,30,,,,,8,10,12,1,7,3,8,0
+124,Giant Frog,,M,beast,,U,11,,18,4d8,30,,30,,,12,13,11,2,10,3,12,1/4
+125,Giant Goat,,L,beast,,U,11,natural armor,19,3d10 + 3,40,,,,,17,11,12,3,12,6,11,1/2
+126,Giant Hyena,,L,beast,,U,12,,45,6d10 + 12,50,,,,,16,14,14,2,12,7,13,1
+127,Giant Lizard,,L,beast,,U,12,natural armor,19,3d10 + 3,30,,,30,,15,12,13,2,10,5,10,1/4
+128,Giant Octopus,,L,beast,,U,11,,52,8d10 + 8,10,,60,,,17,13,13,4,10,4,14,1
+129,Giant Owl,,L,beast,,N,12,,19,3d10 + 3,5,60,,,,13,15,12,8,13,10,15,1/4
+130,Giant Poisonous Snake,,M,beast,,U,14,,11,2d8 + 2,30,,30,,,10,18,13,2,10,3,12,1/4
+131,Giant Rat,,S,beast,,U,12,,7,2d6,30,,,,,7,15,11,2,10,4,10,1/8
+132,Giant Scorpion,,L,beast,,U,15,natural armor,52,7d10 + 14,40,,,,,15,13,15,1,9,3,9,3
+133,Giant Sea Horse,,L,beast,,U,13,natural armor,16,3d10,0,,40,,,12,15,11,2,12,5,11,1/2
+134,Giant Shark,,H,beast,,U,13,natural armor,126,11d12 + 55,,,50,,,23,11,21,1,10,5,13,5
+135,Giant Spider,,L,beast,,U,14,natural armor,26,4d10 + 4,30,,,30,,14,16,12,2,11,4,10,1
+136,Giant Toad,,L,beast,,U,11,,39,6d10 + 6,20,,40,,,15,13,13,2,10,3,10,1
+137,Giant Vulture,,L,beast,,NE,10,,22,3d10 + 6,10,60,,,,15,10,15,6,12,7,13,1
+138,Giant Wasp,,M,beast,,U,12,,13,3d8,10,50,,,,10,14,10,1,10,3,10,1/2
+139,Giant Weasel,,M,beast,,U,13,,9,2d8,40,,,,,11,16,10,4,12,5,13,1/8
+140,Giant Wolf Spider,,M,beast,,U,13,,11,2d8 + 2,40,,,40,,12,16,13,3,12,4,13,1/4
+141,Gibbering Mouther,,M,aberration,,N,9,,67,9d8 + 27,10,,10,,,10,8,16,3,10,6,10,2
+142,Glabrezu,,L,fiend,demon,CE,17,natural armor,157,15d10 + 75,40,,,,,20,15,21,19,17,16,13,9
+143,Gladiator,,M,humanoid,any race,A,16,"{@item studded leather armor|phb|studded leather}, {@item shield|phb}",112,15d8 + 45,30,,,,,18,15,16,10,12,15,11,5
+144,Gnoll,,M,humanoid,gnoll,CE,15,"{@item hide armor|phb}, {@item shield|phb}",22,5d8,30,,,,,14,12,11,6,10,7,10,1/2
+145,Goat,,M,beast,,U,10,,4,1d8,40,,,,,12,10,11,2,10,5,10,0
+146,Goblin,,S,humanoid,goblinoid,NE,15,"{@item leather armor|phb}, {@item shield|phb}",7,2d6,30,,,,,8,14,10,10,8,8,9,1/4
+147,Gold Dragon Wyrmling,,M,dragon,,LG,17,natural armor,60,8d8 + 24,30,60,30,,,19,14,17,14,11,16,14,3
+148,Gorgon,,L,monstrosity,,U,19,natural armor,114,12d10 + 48,40,,,,,20,11,18,2,12,7,14,5
+149,Gray Ooze,,M,ooze,,U,8,,22,3d8 + 9,10,,,10,,12,6,16,1,6,2,8,1/2
+150,Green Dragon Wyrmling,,M,dragon,,LE,17,natural armor,38,7d8 + 7,30,60,30,,,15,12,13,14,11,13,14,2
+151,Green Hag,,M,fey,,NE,17,natural armor,82,11d8 + 33,30,,,,,18,12,16,13,14,14,14,3
+152,Grick,,M,monstrosity,,N,14,natural armor,27,6d8,30,,,30,,14,14,11,3,14,5,12,2
+153,Griffon,,L,monstrosity,,U,12,,59,7d10 + 21,30,80,,,,18,15,16,2,13,8,15,2
+154,Grimlock,,M,humanoid,grimlock,NE,11,,11,2d8 + 2,30,,,,,16,12,12,9,8,6,13,1/4
+155,Guard,,M,humanoid,any race,A,16,"{@item chain shirt|phb}, {@item shield|phb}",11,2d8 + 2,30,,,,,13,12,12,10,11,10,12,1/8
+156,Guardian Naga,,L,monstrosity,,LG,18,natural armor,127,15d10 + 45,40,,,,,19,18,16,16,19,18,14,10
+157,Gynosphinx,,L,monstrosity,,LN,17,natural armor,136,16d10 + 48,40,60,,,,18,15,16,18,18,18,18,11
+158,Half-Red Dragon Veteran,,M,humanoid,human,A,18,{@item plate armor|phb},65,10d8 + 20,30,,,,,16,13,14,10,11,10,12,5
+159,Harpy,,M,monstrosity,,CE,11,,38,7d8 + 7,20,40,,,,12,13,12,7,10,13,10,1
+160,Hawk,,T,beast,,U,13,,1,1d4 - 1,10,60,,,,5,16,8,2,14,6,14,0
+161,Hell Hound,,M,fiend,,LE,15,natural armor,45,7d8 + 14,50,,,,,17,12,14,6,13,6,15,3
+162,Hezrou,,L,fiend,demon,CE,16,natural armor,136,13d10 + 65,30,,,,,19,17,20,5,12,13,11,8
+163,Hill Giant,,H,giant,,CE,13,natural armor,105,10d12 + 40,40,,,,,21,8,19,5,9,6,12,5
+164,Hippogriff,,L,monstrosity,,U,11,,19,3d10 + 3,40,60,,,,17,13,13,2,12,8,15,1
+165,Hobgoblin,,M,humanoid,goblinoid,LE,18,"{@item chain mail|phb}, {@item shield|phb}",11,2d8 + 2,30,,,,,13,12,12,10,10,9,10,1/2
+166,Homunculus,,T,construct,,N,13,natural armor,5,2d4,20,40,,,,4,15,11,10,10,7,10,0
+167,Horned Devil,,L,fiend,devil,LE,18,natural armor,178,17d10 + 85,20,60,,,,22,17,21,12,16,17,13,11
+168,Hunter Shark,,L,beast,,U,12,natural armor,45,6d10 + 12,,,40,,,18,13,15,1,10,4,12,2
+169,Hydra,,H,monstrosity,,U,15,natural armor,172,15d12 + 75,30,,30,,,20,12,20,2,10,7,16,8
+170,Hyena,,M,beast,,U,11,,5,1d8 + 1,50,,,,,11,13,12,2,12,5,13,0
+171,Ice Devil,,L,fiend,devil,LE,18,natural armor,180,19d10 + 76,40,,,,,21,14,18,18,15,18,12,14
+172,Ice Mephit,,S,elemental,,NE,11,,21,6d6,30,30,,,,7,13,10,9,11,12,12,1/2
+173,Imp,,T,fiend,devil,LE,13,,10,3d4 + 3,20,40,,,,6,17,13,11,12,14,11,1
+174,Invisible Stalker,,M,elemental,,N,14,,104,16d8 + 32,50,"{'number': 50, 'condition': '(hover)'}",,,,16,19,14,10,15,11,18,6
+175,Iron Golem,,L,construct,,U,20,natural armor,210,20d10 + 100,30,,,,,24,9,20,3,11,1,10,16
+176,Jackal,,S,beast,,U,12,,3,1d6,40,,,,,8,15,11,3,12,6,13,0
+177,Killer Whale,,H,beast,,U,12,natural armor,90,12d12 + 12,,,60,,,19,10,13,3,12,7,13,3
+178,Knight,,M,humanoid,any race,A,18,{@item plate armor|phb},52,8d8 + 16,30,,,,,16,11,14,11,11,15,10,3
+179,Kobold,,S,humanoid,kobold,LE,12,,5,2d6 - 2,30,,,,,7,15,9,8,7,8,8,1/8
+180,Kraken,,G,monstrosity,titan,CE,18,natural armor,472,27d20 + 189,20,,60,,,30,11,25,22,18,20,14,23
+181,Lamia,,L,monstrosity,,CE,13,natural armor,97,13d10 + 26,30,,,,,16,13,15,14,15,16,12,4
+182,Lemure,,M,fiend,devil,LE,7,,13,3d8,15,,,,,10,5,11,1,11,3,10,0
+183,Lich,,M,undead,,LNXCE,17,natural armor,135,18d8 + 54,30,,,,,11,16,16,20,14,16,19,21
+184,Lion,,L,beast,,U,12,,26,4d10 + 4,50,,,,,17,15,13,3,12,8,13,1
+185,Lizard,,T,beast,,U,10,,2,1d4,20,,,20,,2,11,10,1,8,3,9,0
+186,Lizardfolk,,M,humanoid,lizardfolk,N,15,"natural armor, {@item shield|phb}",22,4d8 + 4,30,,30,,,15,10,13,7,12,7,13,1/2
+187,Mage,,M,humanoid,any race,A,12,,40,9d8,30,,,,,9,14,11,17,12,11,11,6
+188,Magma Mephit,,S,elemental,,NE,11,,22,5d6 + 5,30,30,,,,8,12,12,7,10,10,10,1/2
+189,Magmin,,S,elemental,,CN,14,natural armor,9,2d6 + 2,30,,,,,7,15,12,8,11,10,10,1/2
+190,Mammoth,,H,beast,,U,13,natural armor,126,11d12 + 55,40,,,,,24,9,21,3,11,6,10,6
+191,Manticore,,L,monstrosity,,LE,14,natural armor,68,8d10 + 24,30,50,,,,17,16,17,7,12,8,11,3
+192,Marilith,,L,fiend,demon,CE,18,natural armor,189,18d10 + 90,40,,,,,18,20,20,18,16,20,13,16
+193,Mastiff,,M,beast,,U,12,,5,1d8 + 1,40,,,,,13,14,12,3,12,7,13,1/8
+194,Medusa,,M,monstrosity,,LE,15,natural armor,127,17d8 + 51,30,,,,,10,15,16,12,13,15,14,6
+195,Merfolk,,M,humanoid,merfolk,N,11,,11,2d8 + 2,10,,40,,,10,13,12,11,11,12,12,1/8
+196,Merrow,,L,monstrosity,,CE,13,natural armor,45,6d10 + 12,10,,40,,,18,10,15,8,10,9,10,2
+197,Mimic,,M,monstrosity,shapechanger,N,12,natural armor,58,9d8 + 18,15,,,,,17,12,15,5,13,8,11,2
+198,Minotaur,,L,monstrosity,,CE,14,natural armor,76,9d10 + 27,40,,,,,18,11,16,6,16,9,17,3
+199,Minotaur Skeleton,,L,undead,,LE,12,natural armor,67,9d10 + 18,40,,,,,18,11,15,6,8,5,9,2
+200,Mule,,M,beast,,U,10,,11,2d8 + 2,40,,,,,14,10,13,2,10,5,10,1/8
+201,Mummy,,M,undead,,LE,11,natural armor,58,9d8 + 18,20,,,,,16,8,15,6,10,12,10,3
+202,Mummy Lord,,M,undead,,LE,17,natural armor,97,13d8 + 39,20,,,,,18,10,17,11,18,16,14,15
+203,Nalfeshnee,,L,fiend,demon,CE,18,natural armor,184,16d10 + 96,20,30,,,,21,10,22,19,12,15,11,13
+204,Night Hag,,M,fiend,,NE,17,natural armor,112,15d8 + 45,30,,,,,18,15,16,16,14,16,16,5
+205,Nightmare,,L,fiend,,NE,13,natural armor,68,8d10 + 24,60,90,,,,18,15,16,10,13,15,11,3
+206,Noble,,M,humanoid,any race,A,15,{@item breastplate|phb},9,2d8,30,,,,,11,12,11,12,14,16,12,1/8
+207,Ochre Jelly,,L,ooze,,U,8,,45,6d10 + 12,10,,,10,,15,6,14,2,6,1,8,2
+208,Octopus,,S,beast,,U,12,,3,1d6,5,,30,,,4,15,11,3,10,4,12,0
+209,Ogre,,L,giant,,CE,11,{@item hide armor|phb},59,7d10 + 21,40,,,,,19,8,16,5,7,7,8,2
+210,Ogre Zombie,,L,undead,,NE,8,,85,9d10 + 36,30,,,,,19,6,18,3,6,5,8,2
+211,Oni,,L,giant,,LE,16,{@item chain mail|phb},110,13d10 + 39,30,30,,,,19,11,16,14,12,15,14,7
+212,Orc,,M,humanoid,orc,CE,13,{@item hide armor|phb},15,2d8 + 6,30,,,,,16,12,16,7,11,10,10,1/2
+213,Otyugh,,L,aberration,,N,14,natural armor,114,12d10 + 48,30,,,,,16,11,19,6,13,6,11,5
+214,Owl,,T,beast,,U,11,,1,1d4 - 1,5,60,,,,3,13,8,2,12,7,13,0
+215,Owlbear,,L,monstrosity,,U,13,natural armor,59,7d10 + 21,40,,,,,20,12,17,3,12,7,13,3
+216,Panther,,M,beast,,U,12,,13,3d8,50,,,40,,14,15,10,3,14,7,14,1/4
+217,Pegasus,,L,celestial,,CG,12,,59,7d10 + 21,60,90,,,,18,15,16,10,15,13,16,2
+218,Phase Spider,,L,monstrosity,,U,13,natural armor,32,5d10 + 5,30,,,30,,15,15,12,6,10,6,10,3
+219,Pit Fiend,,L,fiend,devil,LE,19,natural armor,300,24d10 + 168,30,60,,,,26,14,24,22,18,24,14,20
+220,Planetar,,L,celestial,,LG,19,natural armor,200,16d10 + 112,40,120,,,,24,20,24,19,22,25,21,16
+221,Plesiosaurus,,L,beast,,U,13,natural armor,68,8d10 + 24,20,,40,,,18,15,16,2,12,5,13,2
+222,Poisonous Snake,,T,beast,,U,13,,2,1d4,30,,30,,,2,16,11,1,10,3,10,1/8
+223,Polar Bear,,L,beast,,U,12,natural armor,42,5d10 + 15,40,,30,,,20,10,16,2,13,7,13,2
+224,Pony,,M,beast,,U,10,,11,2d8 + 2,40,,,,,15,10,13,2,11,7,10,1/8
+225,Priest,,M,humanoid,any race,A,13,{@item chain shirt|phb},27,5d8 + 5,30,,,,,10,10,12,13,16,13,13,2
+226,Pseudodragon,,T,dragon,,NG,13,,7,2d4 + 2,15,60,,,,6,15,13,10,12,10,13,1/4
+227,Purple Worm,,G,monstrosity,,U,18,natural armor,247,15d20 + 90,50,,,,30,28,7,22,1,8,4,9,15
+228,Quasit,,T,fiend,demon,CE,13,,7,3d4,40,,,,,5,17,10,7,10,10,10,1
+229,Quipper,,T,beast,,U,13,,1,1d4 - 1,,,40,,,2,16,9,1,7,2,8,0
+230,Rakshasa,,M,fiend,,LE,16,natural armor,110,13d8 + 52,40,,,,,14,17,18,13,16,20,13,13
+231,Rat,,T,beast,,U,10,,1,1d4 - 1,20,,,,,2,11,9,2,10,4,10,0
+232,Raven,,T,beast,,U,12,,1,1d4 - 1,10,50,,,,2,14,8,2,12,6,13,0
+233,Red Dragon Wyrmling,,M,dragon,,CE,17,natural armor,75,10d8 + 30,30,60,,30,,19,10,17,12,11,15,14,4
+234,Reef Shark,,M,beast,,U,12,natural armor,22,4d8 + 4,,,40,,,14,13,13,1,10,4,12,1/2
+235,Remorhaz,,H,monstrosity,,U,17,natural armor,195,17d12 + 85,30,,,,20,24,13,21,4,10,5,10,11
+236,Rhinoceros,,L,beast,,U,11,natural armor,45,6d10 + 12,40,,,,,21,8,15,2,12,6,11,2
+237,Riding Horse,,L,beast,,U,10,,13,2d10 + 2,60,,,,,16,10,12,2,11,7,10,1/4
+238,Roc,,G,monstrosity,,U,15,natural armor,248,16d20 + 80,20,120,,,,28,10,20,3,10,9,14,11
+239,Roper,,L,monstrosity,,NE,20,natural armor,93,11d10 + 33,10,,,10,,18,8,17,7,16,6,16,5
+240,Rug of Smothering,,L,construct,,U,12,,33,6d10,10,,,,,17,14,10,1,3,1,6,2
+241,Rust Monster,,M,monstrosity,,U,14,natural armor,27,5d8 + 5,40,,,,,13,12,13,2,13,6,11,1/2
+242,Saber-Toothed Tiger,,L,beast,,U,12,,52,7d10 + 14,40,,,,,18,14,15,3,12,8,13,2
+243,Sahuagin,,M,humanoid,sahuagin,LE,12,natural armor,22,4d8 + 4,30,,40,,,13,11,12,12,13,9,15,1/2
+244,Salamander,,L,elemental,,NE,15,natural armor,90,12d10 + 24,30,,,,,18,14,15,11,10,12,10,5
+245,Satyr,,M,fey,,CN,14,{@item leather armor|phb},31,7d8,40,,,,,12,16,11,12,10,14,12,1/2
+246,Scorpion,,T,beast,,U,11,natural armor,1,1d4 - 1,10,,,,,2,11,8,1,8,2,9,0
+247,Scout,,M,humanoid,any race,A,13,{@item leather armor|phb},16,3d8 + 3,30,,,,,11,14,12,11,13,11,15,1/2
+248,Sea Hag,,M,fey,,CE,14,natural armor,52,7d8 + 21,30,,40,,,16,13,16,12,12,13,11,2
+249,Sea Horse,,T,beast,,U,11,,1,1d4 - 1,,,20,,,1,12,8,1,10,2,10,0
+250,Shadow,,M,undead,,CE,12,,16,3d8 + 3,40,,,,,6,14,13,6,10,8,10,1/2
+251,Shambling Mound,,L,plant,,U,15,natural armor,136,16d10 + 48,20,,20,,,18,8,16,5,10,5,10,5
+252,Shield Guardian,,L,construct,,U,17,natural armor,142,15d10 + 60,30,,,,,18,8,18,7,10,3,10,7
+253,Shrieker,,M,plant,,U,5,,13,3d8,0,,,,,1,1,10,1,3,1,6,0
+254,Silver Dragon Wyrmling,,M,dragon,,LG,17,natural armor,45,6d8 + 18,30,60,,,,19,10,17,12,11,15,14,2
+255,Skeleton,,M,undead,,LE,13,armor scraps,13,2d8 + 4,30,,,,,10,14,15,6,8,5,9,1/4
+256,Solar,,L,celestial,,LG,21,natural armor,243,18d10 + 144,50,150,,,,26,22,26,25,25,30,24,21
+257,Specter,,M,undead,,CE,12,,22,5d8,0,"{'number': 50, 'condition': '(hover)'}",,,,1,14,11,10,10,11,10,1
+258,Spider,,T,beast,,U,12,,1,1d4 - 1,20,,,20,,2,14,8,1,10,2,10,0
+259,Spirit Naga,,L,monstrosity,,CE,15,natural armor,75,10d10 + 20,40,,,,,18,17,14,16,15,16,12,8
+260,Sprite,,T,fey,,NG,15,{@item leather armor|phb},2,1d4,10,40,,,,3,18,10,14,13,11,13,1/4
+261,Spy,,M,humanoid,any race,A,12,,27,6d8,30,,,,,10,15,10,12,14,16,16,1
+262,Steam Mephit,,S,elemental,,NE,10,,21,6d6,30,30,,,,5,11,10,11,10,12,10,1/4
+263,Stirge,,T,beast,,U,14,natural armor,2,1d4,10,40,,,,4,16,11,2,8,6,9,1/8
+264,Stone Giant,,H,giant,,N,17,natural armor,126,11d12 + 55,40,,,,,23,15,20,10,12,9,14,7
+265,Stone Golem,,L,construct,,U,17,natural armor,178,17d10 + 85,30,,,,,22,9,20,3,11,1,10,10
+266,Storm Giant,,H,giant,,CG,16,{@item scale mail|phb},230,20d12 + 100,50,,50,,,29,14,20,16,18,18,19,13
+267,Swarm of Bats,,M,beast,,U,12,,22,5d8,0,30,,,,5,15,10,2,12,4,11,1/4
+268,Swarm of Beetles,,M,beast,,U,12,natural armor,22,5d8,20,,,20,5,3,13,10,1,7,1,8,1/2
+269,Swarm of Centipedes,,M,beast,,U,12,natural armor,22,5d8,20,,,20,,3,13,10,1,7,1,8,1/2
+270,Swarm of Insects,,M,beast,,U,12,natural armor,22,5d8,20,,,20,,3,13,10,1,7,1,8,1/2
+271,Swarm of Poisonous Snakes,,M,beast,,U,14,,36,8d8,30,,30,,,8,18,11,1,10,3,10,2
+272,Swarm of Quippers,,M,beast,,U,13,,28,8d8 - 8,0,,40,,,13,16,9,1,7,2,8,1
+273,Swarm of Rats,,M,beast,,U,10,,24,7d8 - 7,30,,,,,9,11,9,2,10,3,10,1/4
+274,Swarm of Ravens,,M,beast,,U,12,,24,7d8 - 7,10,50,,,,6,14,8,3,12,6,15,1/4
+275,Swarm of Spiders,,M,beast,,U,12,natural armor,22,5d8,20,,,20,,3,13,10,1,7,1,8,1/2
+276,Swarm of Wasps,,M,beast,,U,12,natural armor,22,5d8,5,30,,,,3,13,10,1,7,1,8,1/2
+277,Tarrasque,,G,monstrosity,titan,U,25,natural armor,676,33d20 + 330,40,,,,,30,11,30,3,11,11,10,30
+278,Thug,,M,humanoid,any race,LNXCNYE,11,{@item leather armor|phb},32,5d8 + 10,30,,,,,15,11,14,10,10,11,10,1/2
+279,Tiger,,L,beast,,U,12,,37,5d10 + 10,40,,,,,17,15,14,3,12,8,13,1
+280,Treant,,H,plant,,CG,16,natural armor,138,12d12 + 60,30,,,,,23,8,21,12,16,12,13,9
+281,Tribal Warrior,,M,humanoid,any race,A,12,{@item hide armor|phb},11,2d8 + 2,30,,,,,13,11,12,8,11,8,10,1/8
+282,Triceratops,,H,beast,,U,13,natural armor,95,10d12 + 30,50,,,,,22,9,17,2,11,5,10,5
+283,Troll,,L,giant,,CE,15,natural armor,84,8d10 + 40,30,,,,,18,13,20,7,9,7,12,5
+284,Tyrannosaurus Rex,,H,beast,,U,13,natural armor,136,13d12 + 52,50,,,,,25,10,19,2,12,9,14,8
+285,Unicorn,,L,celestial,,LG,12,,67,9d10 + 18,50,,,,,18,14,15,11,17,16,13,5
+286,Vampire Spawn,,M,undead,,NE,15,natural armor,82,11d8 + 33,30,,,,,16,16,16,11,10,12,13,5
+287,Veteran,,M,humanoid,any race,A,17,{@item splint armor|phb},58,9d8 + 18,30,,,,,16,13,14,10,11,10,12,3
+288,Violet Fungus,,M,plant,,U,5,,18,4d8,5,,,,,3,1,10,1,3,1,6,1/4
+289,Vrock,,L,fiend,demon,CE,15,natural armor,104,11d10 + 44,40,60,,,,17,15,18,8,13,8,11,6
+290,Vulture,,M,beast,,U,10,,5,1d8 + 1,10,50,,,,7,10,13,2,12,4,13,0
+291,Warhorse,,L,beast,,U,11,,19,3d10 + 3,60,,,,,18,12,13,2,12,7,11,1/2
+292,Warhorse Skeleton,,L,undead,,LE,13,barding scraps,22,3d10 + 6,60,,,,,18,12,15,2,8,5,9,1/2
+293,Water Elemental,,L,elemental,,N,14,natural armor,114,12d10 + 48,30,,90,,,18,14,18,5,10,8,10,5
+294,Weasel,,T,beast,,U,13,,1,1d4 - 1,30,,,,,3,16,8,2,12,3,13,0
+295,White Dragon Wyrmling,,M,dragon,,CE,16,natural armor,32,5d8 + 10,30,60,30,,15,14,10,14,5,10,11,14,2
+296,Wight,,M,undead,,NE,14,{@item studded leather armor|phb|studded leather},45,6d8 + 18,30,,,,,15,14,16,10,13,15,13,3
+297,Will-o'-Wisp,,T,undead,,CE,19,,22,9d4,0,"{'number': 50, 'condition': '(hover)'}",,,,1,28,10,13,14,11,12,2
+298,Winter Wolf,,L,monstrosity,,NE,13,natural armor,75,10d10 + 20,50,,,,,18,13,14,7,12,8,15,3
+299,Wolf,,M,beast,,U,13,natural armor,11,2d8 + 2,40,,,,,12,15,12,3,12,6,13,1/4
+300,Worg,,L,monstrosity,,NE,13,natural armor,26,4d10 + 4,50,,,,,16,13,13,7,11,8,14,1/2
+301,Wraith,,M,undead,,NE,13,,67,9d8 + 27,0,"{'number': 60, 'condition': '(hover)'}",,,,6,16,16,12,14,15,12,5
+302,Wyvern,,L,dragon,,U,13,natural armor,110,13d10 + 39,20,80,,,,19,10,16,5,12,6,14,6
+303,Xorn,,M,elemental,,N,19,natural armor,73,7d8 + 42,20,,,,20,17,10,22,11,10,11,16,5
+304,Young Black Dragon,,L,dragon,,CE,18,natural armor,127,15d10 + 45,40,80,40,,,19,14,17,12,11,15,16,7
+305,Young Blue Dragon,,L,dragon,,LE,18,natural armor,152,16d10 + 64,40,80,,,20,21,10,19,14,13,17,19,9
+306,Young Brass Dragon,,L,dragon,,CG,17,natural armor,110,13d10 + 39,40,80,,,20,19,10,17,12,11,15,16,6
+307,Young Bronze Dragon,,L,dragon,,LG,18,natural armor,142,15d10 + 60,40,80,40,,,21,10,19,14,13,17,17,8
+308,Young Copper Dragon,,L,dragon,,CG,17,natural armor,119,14d10 + 42,40,80,,40,,19,12,17,16,13,15,17,7
+309,Young Gold Dragon,,L,dragon,,LG,18,natural armor,178,17d10 + 85,40,80,40,,,23,14,21,16,13,20,19,10
+310,Young Green Dragon,,L,dragon,,LE,18,natural armor,136,16d10 + 48,40,80,40,,,19,12,17,16,13,15,17,8
+311,Young Red Dragon,,L,dragon,,CE,18,natural armor,178,17d10 + 85,40,80,,40,,23,10,21,14,11,19,18,10
+312,Young Silver Dragon,,L,dragon,,LG,18,natural armor,168,16d10 + 80,40,80,,,,23,10,21,14,11,19,18,9
+313,Young White Dragon,,L,dragon,,CE,17,natural armor,133,14d10 + 56,40,80,40,,20,18,10,18,6,11,12,16,6
+314,Zombie,,M,undead,,NE,8,,22,3d8 + 9,20,,,,,13,6,16,3,6,5,8,1/4

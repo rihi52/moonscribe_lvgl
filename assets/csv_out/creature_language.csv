@@ -1,0 +1,304 @@
+creature_id,language
+1,Deep Speech
+1,telepathy 120 ft.
+2,any one language (usually Common)
+3,Common
+3,Draconic
+4,Common
+4,Draconic
+5,Common
+5,Draconic
+6,Common
+6,Draconic
+7,Common
+7,Draconic
+8,Common
+8,Draconic
+9,Common
+9,Draconic
+10,Common
+10,Draconic
+11,Common
+11,Draconic
+12,Common
+12,Draconic
+13,Auran
+14,Common
+14,Draconic
+15,Common
+15,Draconic
+16,Common
+16,Draconic
+17,Common
+17,Draconic
+18,Common
+18,Draconic
+19,Common
+19,Draconic
+20,Common
+20,Draconic
+21,Common
+21,Draconic
+22,Common
+22,Draconic
+23,Common
+23,Draconic
+24,Common
+24,Sphinx
+28,any six languages
+29,Thieves' cant plus any two languages
+30,one language known by its creator
+31,one language known by its creator
+33,Ignan
+36,Abyssal
+36,telepathy 120 ft.
+37,any one language (usually Common)
+38,any two languages
+39,Infernal
+39,telepathy 120 ft.
+42,Infernal
+42,telepathy 120 ft.
+43,Draconic
+44,any one language (usually Common)
+46,Draconic
+48,Blink Dog
+48,understands Sylvan but can't speak it
+50,Draconic
+52,Infernal
+52,telepathy 120 ft.
+53,Draconic
+54,Draconic
+56,Common
+56,Goblin
+60,Elvish
+60,Sylvan
+61,Infernal
+61,telepathy 120 ft.
+62,understands Draconic but can't speak
+63,understands Deep Speech but can't speak
+64,understands the languages of its creator but can't speak
+65,Deep Speech
+65,Undercommon
+66,Common
+66,Giant
+68,any one language (usually Common)
+70,Draconic
+71,all
+71,telepathy 120 ft.
+74,any one language (usually Common)
+75,any one language (usually Common)
+78,Gnomish
+78,Terran
+78,Undercommon
+80,all
+80,telepathy 120 ft.
+82,Auran
+83,Common
+85,Aquan
+85,Draconic
+86,Abyssal
+86,telepathy 60 ft. (works only with creatures that understand Abyssal)
+87,Elvish
+87,Undercommon
+88,Elvish
+88,Undercommon
+89,Druidic plus any two languages
+90,Elvish
+90,Sylvan
+91,Dwarvish
+91,Undercommon
+92,Auran
+92,Terran
+94,Terran
+95,Ignan
+98,Infernal
+98,telepathy 120 ft.
+100,Giant
+100,Orc
+101,Ignan
+102,Giant
+103,understands the languages of its creator but can't speak
+107,Giant
+108,Terran
+110,Common
+111,any languages it knew in life
+112,Common
+121,Giant Eagle
+121,understands Common and Auran but can't speak them
+122,Giant Elk
+122,"understands Common, Elvish, Sylvan but can't speak them"
+129,Giant Owl
+129,"understands Common, Elvish, and Sylvan but can't speak them"
+137,understands Common but can't speak
+142,Abyssal
+142,telepathy 120 ft.
+143,any one language (usually Common)
+144,Gnoll
+146,Common
+146,Goblin
+147,Draconic
+150,Draconic
+151,Common
+151,Draconic
+151,Sylvan
+154,Undercommon
+155,any one language (usually Common)
+156,Celestial
+156,Common
+157,Common
+157,Sphinx
+158,Common
+158,Draconic
+159,Common
+161,understands Infernal but can't speak it
+162,Abyssal
+162,telepathy 120 ft.
+163,Giant
+165,Common
+165,Goblin
+166,understands the languages of its creator but can't speak
+167,Infernal
+167,telepathy 120 ft.
+171,Infernal
+171,telepathy 120 ft.
+172,Aquan
+172,Auran
+173,Infernal
+173,Common
+174,Auran
+174,understands Common but doesn't speak it
+175,understands the languages of its creator but can't speak
+178,any one language (usually Common)
+179,Common
+179,Draconic
+180,Abyssal
+180,Celestial
+180,Infernal
+180,Primordial
+180,telepathy 120 ft. but can't speak
+181,Abyssal
+181,Common
+182,understands Infernal but can't speak
+183,Common plus up to five other languages
+186,Draconic
+187,any four languages
+188,Ignan
+188,Terran
+189,Ignan
+191,Common
+192,Abyssal
+192,telepathy 120 ft.
+194,Common
+195,Aquan
+195,Common
+196,Abyssal
+196,Aquan
+198,Abyssal
+199,understands Abyssal but can't speak
+201,the languages it knew in life
+202,the languages it knew in life
+203,Abyssal
+203,telepathy 120 ft.
+204,Abyssal
+204,Common
+204,Infernal
+204,Primordial
+205,"understands Abyssal, Common, and Infernal but can't speak "
+206,any two languages
+209,Common
+209,Giant
+210,understands Common and Giant but can't speak
+211,Common
+211,Giant
+212,Common
+212,Orc
+213,Otyugh
+217,understands Celestial
+217,Common
+217,Elvish
+217,and Sylvan but can't speak
+219,Infernal
+219,telepathy 120 ft.
+220,all
+220,telepathy 120 ft.
+225,any two languages
+226,understands Common and Draconic but can't speak
+228,Abyssal
+228,Common
+230,Common
+230,Infernal
+233,Draconic
+243,Sahuagin
+244,Ignan
+245,Common
+245,Elvish
+245,Sylvan
+247,any one language (usually Common)
+248,Aquan
+248,Common
+248,Giant
+252,understands commands given in any language but can't speak
+254,Draconic
+255,understands all languages it spoke in life but can't speak
+256,all
+256,telepathy 120 ft.
+257,understands all languages it knew in life but can't speak
+259,Abyssal
+259,Common
+260,Common
+260,Elvish
+260,Sylvan
+261,any two languages
+262,Aquan
+262,Ignan
+264,Giant
+265,understands the languages of its creator but can't speak
+266,Common
+266,Giant
+278,any one language (usually Common)
+280,Common
+280,Druidic
+280,Elvish
+280,Sylvan
+281,any one language
+283,Giant
+285,Celestial
+285,Elvish
+285,Sylvan
+285,telepathy 60 ft.
+286,the languages it knew in life
+287,any one language (usually Common)
+289,Abyssal
+289,telepathy 120 ft.
+293,Aquan
+295,Draconic
+296,the languages it knew in life
+297,the languages it knew in life
+298,Common
+298,Giant
+298,Winter Wolf
+300,Goblin
+300,Worg
+301,the languages it knew in life
+303,Terran
+304,Common
+304,Draconic
+305,Common
+305,Draconic
+306,Common
+306,Draconic
+307,Common
+307,Draconic
+308,Common
+308,Draconic
+309,Common
+309,Draconic
+310,Common
+310,Draconic
+311,Common
+311,Draconic
+312,Common
+312,Draconic
+313,Common
+313,Draconic
+314,understands all languages it spoke in life but can't speak

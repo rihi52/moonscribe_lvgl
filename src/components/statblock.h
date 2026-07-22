@@ -1,9 +1,10 @@
 #ifndef STATBLOCK_H
 #define STATBLOCK_H
 #include "lvgl/lvgl.h"
+#include "../data/creature_data.h"
 
 /*********************
- *  Global Prototypes
+ *  Typedefs
  *********************/
 typedef struct
 {
@@ -23,7 +24,7 @@ typedef struct
     lv_obj_t *AcHpInitPbSpeedContainer;
     lv_obj_t *pAcInitRow;
     lv_obj_t *pAcLabel;
-    lv_obj_t *pHpLabel;
+    lv_obj_t *pInitLabel;
     lv_obj_t *pHpPbRow;
     lv_obj_t *pHpLabel;
     lv_obj_t *pPbLabel;
@@ -107,5 +108,10 @@ typedef struct
 
 } StatblockView;
 
+/*********************
+ *  Global Prototypes
+ *********************/
+void gvCreateStatblockView(StatblockView *pView, CreatureData *pData);
+void gvAttachStatBlockView(lv_obj_t *pParent, StatblockView *pView);
 
 #endif  /* STATBLOCK_H */
