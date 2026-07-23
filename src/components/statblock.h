@@ -15,7 +15,9 @@ typedef struct
     lv_obj_t *pNameChallengeRow;
     lv_obj_t *pNameLabel;
     lv_obj_t *pChallengeRatingLabel;
-    lv_obj_t *pTypeAlignmentExpRow;
+    lv_obj_t *pSizeTypeAlignmentExpRow;
+    lv_obj_t *pSizeTypeAlignmentLabel;
+    lv_obj_t *pSizeLabel;
     lv_obj_t *pTypeLabel;
     lv_obj_t *pAlignmentLabel;
     lv_obj_t *pExpLabel;

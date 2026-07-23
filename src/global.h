@@ -6,6 +6,7 @@
 /*********************
  *  Global Variables
  *********************/
+#define SMALL_BUFFER    128
 
 /**********************
  *      TYPEDEFS

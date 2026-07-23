@@ -19,6 +19,7 @@ typedef struct
 {
     char Name[SHORT_TEXT];
     char ChallengeRating[SHORT_TEXT];
+    char Size[SHORT_TEXT];
     char Type[SHORT_TEXT];
     char Alignment[SHORT_TEXT];
     uint16_t sExp;

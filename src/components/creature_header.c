@@ -6,6 +6,10 @@
 #define HEADER_WIDTH    200
 #define HEADER_HEIGHT   100
 
+/*********************
+ *  Global functions
+ *********************/
+
 CreatureHeader *gpCreateCreatureHeader( lv_obj_t *pParent
                                       , const char *pName
                                       , uint16_t sChallengeRating
@@ -16,7 +20,7 @@ CreatureHeader *gpCreateCreatureHeader( lv_obj_t *pParent
     /* Malloc a new struct because how many are needed could change every time */
     CreatureHeader *HeaderToCreate = lv_malloc(sizeof(CreatureHeader));
     /* Buffer used to convert ints to chars */
-    char xBuffer[128];
+    char xBuffer[SMALL_BUFFER];
 
     HeaderToCreate->pName = pName;
     HeaderToCreate->sChallengeRating = sChallengeRating;
