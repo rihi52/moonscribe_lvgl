@@ -7,6 +7,13 @@
 #define SHORT_TEXT  64
 #define MAX_ACTIONS 15
 
+#define WALK_SPEED      0
+#define BURROW_SPEED    1
+#define CLIMB_SPEED     2
+#define FLY_SPEED       3
+#define SWIM_SPEED      4
+#define SPEED_TYPES     5
+
 /*********************
  *  Typedefs
  *********************/
@@ -27,11 +34,7 @@ typedef struct
     uint16_t sInit;
     uint16_t sHp;
     uint16_t sPb;
-    uint16_t sWalkSpeed;
-    uint16_t sFlySpeed;
-    uint16_t sSwimSpeed;
-    uint16_t sClimbSpeed;
-    uint16_t sBurrowSpeed;
+    uint16_t sSpeedTypes[SPEED_TYPES];
 
     uint16_t sStrScore;
     uint16_t sIntScore;
